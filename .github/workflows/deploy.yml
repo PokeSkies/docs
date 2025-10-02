@@ -31,5 +31,5 @@ jobs:
           path: dist/
           remote_path: /var/www/docs.pokeskies.com/
           remote_host: ${{ secrets.STARLIGHT_HOST }}
-          remote_user: ${{ secrets.STARLIGHT_HOST }}
+          remote_user: ${{ secrets.STARLIGHT_USER }}
           remote_key: ${{ secrets.STARLIGHT_KEY }}
