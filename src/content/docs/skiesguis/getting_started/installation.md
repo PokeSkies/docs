@@ -20,7 +20,7 @@ SkiesGUIs requires the following to run (as of January 2026):
 
 ## Installation Steps
 1. Set up a Fabric server with Minecraft 1.21.1
-2. Install the SkiesGUIs mod jar into the `mods` folder of your server. Download the mod [here](https://modrinth.com/mod/skiesguis)!
+2. Install the SkiesGUIs mod jar into the `mods` folder of your server. Download the mod <a href="https://modrinth.com/mod/skiesguis" target="_blank" rel="noopener noreferrer">here</a>!
 3. Download all required dependencies for the mod (See [Server Requirements](#server-requirements) above)]
 4. Restart the server to generate the configuration files and folders.
 5. Open the example GUI using the command `/gui open example_gui` while in-game.
@@ -29,17 +29,17 @@ SkiesGUIs requires the following to run (as of January 2026):
 ## Optional Integrations
 SkiesGUIs supports a variety of optional integrations to enhance functionality. These integrations are not required but can provide added features.
 - **Economy Plugins** - SkiesGUIs supports a variety of economy plugins for use
-  - Impactor
-  - BEconomy
-  - CobbleDollars
+  - <a href="https://modrinth.com/mod/impactor" target="_blank" rel="noopener noreferrer">Impactor</a>
+  - <a href="https://modrinth.com/mod/beconomy" target="_blank" rel="noopener noreferrer">BEconomy</a>
+  - <a href="https://modrinth.com/mod/cobbledollars" target="_blank" rel="noopener noreferrer">CobbleDollars</a>
   - Pebbles Economy
   - **See the [Supported Economies](/skiesguis/getting_started/economies/) page for more information.**
 - **Placeholder Services** - SkiesGUIs supports a variety of Placeholder APIs for use with placeholders in GUI configurations.
-  - MiniPlaceholders
-  - TextPlaceholderAPI (not the spigot one)
+  - <a href="https://modrinth.com/plugin/miniplaceholders" target="_blank" rel="noopener noreferrer">MiniPlaceholders</a>
+  - <a href="https://modrinth.com/mod/placeholder-api" target="_blank" rel="noopener noreferrer">TextPlaceholderAPI</a> (not the spigot one)
   - **See the [Placeholders](/skiesguis/getting_started/placeholders/) page for more information.**
 - **Additional Actions** - SkiesGUIs supports additional action types through optional dependencies.
-    - Cobblemon - `MOLANG`
+    - <a href="https://modrinth.com/mod/cobblemon" target="_blank" rel="noopener noreferrer">Cobblemon</a> - `MOLANG`
 - **Additional Requirements** - SkiesGUIs supports additional requirement types through optional dependencies.
-  - Plan - `PLAN_PLAYTIME`
-  - Cobblemon - `MOLANG`
+  - <a href="https://www.spigotmc.org/resources/plan-player-analytics.32536/" target="_blank" rel="noopener noreferrer">Plan</a> (fabric version) - `PLAN_PLAYTIME`
+  - <a href="https://modrinth.com/mod/cobblemon" target="_blank" rel="noopener noreferrer">Cobblemon</a> - `MOLANG`

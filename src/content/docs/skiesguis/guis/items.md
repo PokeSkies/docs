@@ -46,12 +46,12 @@ The amount of this item that should be displayed in each slot. Defaults to 1 if 
 "amount": 10
 ```
 ### Name
-The name to override the item with. Defaults to the item's normal name if not provided. Uses [MiniMessage formatting](https://docs.advntr.dev/minimessage/format.html)!
+The name to override the item with. Defaults to the item's normal name if not provided. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
 ```json
 "name": "<red>Example Stone"
 ```
 ### Lore
-A list of lore to override the item with. Defaults to an empty list if not provided. Uses [MiniMessage formatting](https://docs.advntr.dev/minimessage/format.html)!
+A list of lore to override the item with. Defaults to an empty list if not provided. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
 ```json
 "lore": [
   "<gray>Example Line 1",
@@ -68,7 +68,7 @@ An number representing the Custom Model Data of the item. This is a quick option
 
 A list of components that are set onto the item. This follows the same formatting as applying components to an item via `/give`. No additional components are applied if not provided.
 :::note
-Components are the new way of defining item NBT in Minecraft. They replaced the older NBT format in versions 1.20.5+. For more information on components, see the [Minecraft Wiki on Data Components](https://minecraft.wiki/w/Data_component_format).
+Components are the new way of defining item NBT in Minecraft. They replaced the older NBT format in versions 1.20.5+. For more information on components, see the <a href="https://minecraft.wiki/w/Data_component_format" target="_blank" rel="noopener noreferrer">Minecraft Wiki on Data Components</a>.
 :::
 ```json
 "components": {

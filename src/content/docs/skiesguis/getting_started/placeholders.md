@@ -7,9 +7,9 @@ SkiesGUIs supports the use of Placeholder APIs to allow for dynamic text within 
 
 ## Supported Mods
 The following are the different types of Placeholders Services are supported.
-- [MiniPlaceholders](https://modrinth.com/plugin/miniplaceholders)
-- [TextPlaceholderAPI](https://modrinth.com/mod/placeholder-api)
-- [Impactor](https://modrinth.com/mod/impactor)
+- <a href="https://modrinth.com/plugin/miniplaceholders" target="_blank" rel="noopener noreferrer">MiniPlaceholders</a>
+- <a href="https://modrinth.com/mod/placeholder-api" target="_blank" rel="noopener noreferrer">TextPlaceholderAPI</a>
+- <a href="https://modrinth.com/mod/impactor" target="_blank" rel="noopener noreferrer">Impactor</a>
 
 ## Default Placeholders
 By default, the mod comes with a few built-in placeholders that can be used without any additional Placeholder API mods installed. These include:

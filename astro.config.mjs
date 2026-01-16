@@ -9,7 +9,7 @@ export default defineConfig({
 		starlight({
 			title: 'SkiesDev Docs',
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/pokeskies' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/pokeskies/docs' },
 				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/cgBww275Fg' },
 				{ icon: 'heart', label: 'Ko-Fi', href: 'https://ko-fi.com/stampede2011' }
 			],
@@ -26,21 +26,21 @@ export default defineConfig({
 									'skiesguis/getting_started/introduction',
 									'skiesguis/getting_started/installation',
 									'skiesguis/getting_started/commands_permissions',
-									'skiesguis/getting_started/main_config',
 									'skiesguis/getting_started/economies',
 									'skiesguis/getting_started/placeholders',
 									'skiesguis/getting_started/faqs'
 								]
 							},
+							"skiesguis/main_config",
 							{
-								label: "GUI Configuration",
+								label: "GUIs",
 								items: [
-									'skiesguis/gui_config/base',
-									'skiesguis/gui_config/items',
-									'skiesguis/gui_config/actions',
-									'skiesguis/gui_config/requirements',
-									'skiesguis/gui_config/examples',
-									'skiesguis/gui_config/components'
+									'skiesguis/guis/base',
+									'skiesguis/guis/items',
+									'skiesguis/guis/actions',
+									'skiesguis/guis/requirements',
+									'skiesguis/guis/components',
+									'skiesguis/guis/examples'
 								]
 							}
 						],

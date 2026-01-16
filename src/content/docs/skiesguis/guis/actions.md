@@ -23,12 +23,12 @@ Generally, actions follow the below format. A MAP of actions that may be ran. Ea
 
 ## Action Options
 ### Type (required)
-The type of action that this entry is. Must be in full capitalization. A list of types can be found in [Action Types](#action-types).
+The type of action that this entry is. A list of types can be found in [Action Types](#action-types).
 ```json
 "type": "MESSAGE"
 ```
 ### Click
-The type of click that is required for this action to execute. Must be in full capitalization. A list of types can be found in [Click Types](#click-types). Defaults to ANY if not provided.
+The type of click that is required for this action to execute. A list of types can be found in [Click Types](#click-types). Defaults to ANY if not provided.
 ```json
 "click": "ANY"
 ```
@@ -56,7 +56,7 @@ Additional options are available depending on the type of action used. See [Acti
 ***
 
 ## Action Types
-These are the available Action Types and their respective settings. Some settings are optional, while others may be required.
+These are the available Action Types along with a short description and the required mods, if any.
 
 | Identifier        | Description                                                                           | Required Mods |
 |-------------------|---------------------------------------------------------------------------------------|---------------|
@@ -77,7 +77,7 @@ These are the available Action Types and their respective settings. Some setting
 | MOLANG            | Executes a set of molang scripts/expressions                                          | Cobblemon     |
 
 ### Message Action
-Sends a message to the player, parsed by Placeholder Services. Uses [MiniMessage formatting](https://docs.advntr.dev/minimessage/format.html)!
+Sends a message to the player, parsed by Placeholder Services. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
 ```json
 "type": "MESSAGE",
 "message": ["<blue>This is a message to the player!"]
@@ -96,7 +96,7 @@ Runs a command as the player, parsed by Placeholder Services.
 "permission_level": 1 // Optional. Permission level the command is ran as
 ```
 ### Broadcast Action
-Broadcasts a message to all players, parsed by Placeholder Services. Uses [MiniMessage formatting](https://docs.advntr.dev/minimessage/format.html)!
+Broadcasts a message to all players, parsed by Placeholder Services. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
 ```json
 "type": "BROADCAST",
 "message": ["<green>%player% has clicked the special item!"]

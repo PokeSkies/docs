@@ -42,7 +42,7 @@ A MAP of requirements that need to be checked. Each entry needs its unique strin
 }
 ```
 #### Type (required)
-The type of action that this entry is. Must be in full capitalization. A list of types can be found in [Action Types](#action-types).
+The type of action that this entry is. A list of types can be found in [Action Types](#action-types).
 ```json
 "type": "MESSAGE"
 ```

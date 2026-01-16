@@ -1,0 +1,186 @@
+---
+title: Examples
+description: Example files for the SkiesGUIs mod
+---
+
+Example GUI configurations for SkiesGUIs! More will be added over time. Feel free to send in any you create!
+
+# Default
+Default example GUI provided with the Mod.
+<details>
+<summary><b>example_gui.json</b></summary>
+
+```json
+{
+  "title": "<dark_gray>Example GUI",
+  "size": 3,
+  "alias_commands": ["example"],
+  "open_actions": {
+    "playsound": {
+      "type": "PLAYSOUND",
+      "sound": "cobblemon:pc.on"
+    }
+  },
+  "close_actions": {
+    "playsound": {
+      "type": "PLAYSOUND",
+      "sound": "cobblemon:pc.off"
+    }
+  },
+  "items": {
+    "background": {
+      "item": "minecraft:blue_stained_glass_pane",
+      "slots": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+      "nbt": {
+        "minecraft:hide_tooltip": {}
+      }
+    },
+    "item_diamond_sword": {
+      "item": "minecraft:diamond_sword",
+      "slots": [10],
+      "amount": 1,
+      "name": "<blue><b>Example Sword",
+      "lore": ["<gray><italic>Example lore!"],
+      "nbt": {
+        "minecraft:enchantments": {
+          "levels": {
+            "minecraft:unbreaking": 3
+          },
+          "show_in_tooltip": false
+        },
+        "minecraft:hide_additional_tooltip": {}
+      },
+      "click_actions": {
+        "action_1": {
+          "type": "COMMAND_CONSOLE",
+          "click": "ANY",
+          "commands": ["give %player% diamond_sword 1"]
+        },
+        "action_2": {
+          "type": "MESSAGE",
+          "click": "ANY",
+          "message": ["<blue>You have received the Example Sword!"]
+        },
+        "refresh": {
+          "type": "REFRESH_GUI"
+        }
+      }
+    },
+    "pokemon_pikachu": {
+      "item": "cobblemon:pokemon_model",
+      "slots": [11],
+      "amount": 1,
+      "name": "<blue><b>Pikachu",
+      "lore": [
+        "<gray><italic>Left Click for a normal Pikachu",
+        "<gray><italic>Right Click for a <gold>shiny Pikachu"
+      ],
+      "nbt": {
+        "cobblemon:pokemon_item": {
+          "species": "cobblemon:pikachu",
+          "aspects": ["shiny"]
+        }
+      },
+      "click_actions": {
+        "normal_action": {
+          "type": "COMMAND_CONSOLE",
+          "click": "LEFT_CLICK",
+          "commands": ["pokegiveother %player% pikachu 1"]
+        },
+        "shiny_action": {
+          "type": "COMMAND_CONSOLE",
+          "click": "RIGHT_CLICK",
+          "commands": ["pokegiveother %player% pikachu 1 shiny"]
+        },
+        "normal_message": {
+          "type": "MESSAGE",
+          "click": "LEFT_CLICK",
+          "message": ["<blue>You have received a normal Pikachu!"]
+        },
+        "shiny_message": {
+          "type": "MESSAGE",
+          "click": "RIGHT_CLICK",
+          "message": ["<gold>You have received a shiny Pikachu!"]
+        }
+      }
+    },
+    "pokemon_random_a": {
+      "item": "cobblemon:poke_ball",
+      "slots": [12],
+      "name": "<blue><b>Random Pokemon",
+      "lore": ["<gray><italic>Click for a random Pokemon"],
+      "priority": 2,
+      "nbt": {
+        "minecraft:hide_additional_tooltip": {}
+      },
+      "click_actions": {
+        "pokemon": {
+          "type": "COMMAND_CONSOLE",
+          "commands": ["pokegiveother %player% random"]
+        },
+        "message": {
+          "type": "MESSAGE",
+          "message": ["<blue>You have received a random Pokemon!"]
+        }
+      }
+    },
+    "pokemon_random_b": {
+      "item": "cobblemon:master_ball",
+      "slots": [12],
+      "name": "<gold><b>Random Shiny Pokemon",
+      "lore": ["<gray><italic>Click for a random Shiny Pokemon"],
+      "priority": 1,
+      "nbt": {
+        "minecraft:hide_additional_tooltip": {}
+      },
+      "view_requirements": {
+        "requirements": {
+          "permission_1": {
+            "type": "PERMISSION",
+            "permission": "test.permission"
+          }
+        }
+      },
+      "click_actions": {
+        "pokemon": {
+          "type": "COMMAND_CONSOLE",
+          "commands": ["pokegiveother %player% random shiny"]
+        },
+        "message": {
+          "type": "MESSAGE",
+          "message": ["<gold>You have received a random Shiny Pokemon!"]
+        }
+      }
+    }
+  }
+}
+```
+</details>
+
+# Default Molang
+Default GUI config using a Molang script that is provided with the Mod.
+<details>
+<summary><b>example_gui.json</b></summary>
+
+```json
+{
+  "title": "<dark_gray>Example Molang",
+  "size": 1,
+  "open_actions": {
+    "molang": {
+      "type": "MOLANG",
+      "script": "q.gui.player.tell('test');"
+    }
+  },
+  "items": {
+    "background": {
+      "item": "minecraft:blue_stained_glass_pane",
+      "slots": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+      "nbt": {
+        "minecraft:hide_tooltip": {}
+      }
+    }
+  }
+}
+```
+</details>
