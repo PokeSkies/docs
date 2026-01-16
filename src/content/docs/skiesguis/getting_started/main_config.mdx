@@ -1,0 +1,29 @@
+---
+title: Main Config
+description: Guide to configure the Main Config for the SkiesGUIs mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+The guide explains configuring the main `config.json` file for SkiesGUIs. The main configuration file contains global settings that affect the entire mod.
+
+<FileTree>
+- config
+    - skiesguis
+        - config.json
+</FileTree>
+
+***
+## Example File
+> ```json
+> {
+>   "debug": false
+> }
+> ```
+
+## Options
+### Debug
+Toggles the debugging status to make finding mistakes easier. Actual errors with GUIs will still be displayed even if false. This is not recommended to leave enabled as it will display a lot of information. Can also be toggled using the command `/guis debug`.
+>```json
+> "debug": false
+>```

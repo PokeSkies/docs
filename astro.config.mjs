@@ -16,17 +16,35 @@ export default defineConfig({
 			plugins: [
 				starlightSidebarTopics([
 					{
-						label: 'Guides',
-						link: '/guides/',
+						label: 'SkiesGUIs',
+						link: '/skiesguis/getting_started/introduction',
 						icon: 'open-book',
-						items: ['guides/example'],
-					},
-					{
-						label: 'Reference',
-						link: '/reference/',
-						icon: 'information',
-						items: ['reference/example'],
-					},
+						items: [
+							{
+								label: "Getting Started",
+								items: [
+									'skiesguis/getting_started/introduction',
+									'skiesguis/getting_started/installation',
+									'skiesguis/getting_started/commands_permissions',
+									'skiesguis/getting_started/main_config',
+									'skiesguis/getting_started/economies',
+									'skiesguis/getting_started/placeholders',
+									'skiesguis/getting_started/faqs'
+								]
+							},
+							{
+								label: "GUI Configuration",
+								items: [
+									'skiesguis/gui_config/base',
+									'skiesguis/gui_config/items',
+									'skiesguis/gui_config/actions',
+									'skiesguis/gui_config/requirements',
+									'skiesguis/gui_config/examples',
+									'skiesguis/gui_config/components'
+								]
+							}
+						],
+					}
 				]),
 			],
 			components: {

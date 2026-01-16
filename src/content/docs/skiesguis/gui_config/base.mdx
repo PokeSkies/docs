@@ -1,0 +1,117 @@
+---
+title: Base Configuration
+description: Guide to configure GUIs for the SkiesGUIs mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+Each GUI configuration is stored in its own JSON file within the `guis` folder inside the main `/config/skiesguis/` folder.
+<FileTree>
+- config
+    - skiesguis
+        - guis
+            - example_gui.json
+            - second_gui.json
+</FileTree>
+
+Every GUI can have a base set of configuration options defined. Most importantly, the `"title"`, `"size"`, and `"items"` options are necessary for most use cases. Additional options can be defined for added functionality.
+```json
+{
+  "title": "<dark_gray>Example GUI",
+  "size": 3,
+  "alias_commands": [],
+  "alias_permission": "",
+  "open_actions": {},
+  "close_actions": {},
+  "open_requirements": {},
+  "items": {}
+}
+```
+
+### Title (required)
+The message displayed at the top of the GUI. Uses [MiniMessage formatting](https://docs.advntr.dev/minimessage/format.html)!
+```json
+"title": "<dark_gray>Example Title"
+```
+### Size (required)
+The number of rows the GUI should contain. Integer value between `1` and `6`.
+```json
+"size": 3
+```
+### Items (required)
+A MAP of items to display. Each entry needs its unique string identifier. See the [Items](/skiesguis/gui_config/items/) page for more information.
+```json
+"items": {}
+```
+### Alias Commands
+A list of commands that can be used to access this GUI. Each entry is a new command, which should only be one word and unused by another mod. **A restart is required to register commands**!
+```json
+"alias_commands": [
+  "example"
+]
+```
+### Alias Permission
+The permission node required to use any of the [Alias Commands](#alias-commands). If undefined, the default `skiesguis.open.<gui_id>` permission will be used. Set to `""` to set no permission requirement.
+```json
+"alias_permission": "skiesguis.open.example"
+```
+### Open Actions
+A list of Actions that are executed when the GUI is opened. Any [Open Requirements](#open-requirements) must succeed before any actions are executed. Each action can have [Requirements](/skiesguis/gui_config/requirements/) defined that must also succeed before each actions is executed. See [Actions](/skiesguis/gui_config/actions/) for more information.
+```json
+"open_actions": {
+  "action_1": {
+    "type": "COMMAND_CONSOLE",
+    "click": "ANY",
+    "commands": ["give %player% diamond 1"]
+  },
+  "action_2": {
+    "type": "MESSAGE",
+    "click": "ANY",
+    "message": ["<blue>Thanks for opening my menu!"]
+  }
+}
+```
+### Close Actions
+A list of Actions that are executed when the GUI is closed. Each action can have [Requirements](/skiesguis/gui_config/requirements/) defined that must also succeed before each actions is executed. See [Actions](/skiesguis/gui_config/actions/) for more information.
+```json
+"close_actions": {
+  "action_1": {
+    "type": "COMMAND_CONSOLE",
+    "click": "ANY",
+    "commands": ["give %player% diamond_sword 1"]
+  },
+  "action_2": {
+    "type": "MESSAGE",
+    "click": "ANY",
+    "message": ["<red>Sad to see you go. Take this for the road!"]
+  }
+}
+```
+### Open Requirements
+Define requirements that must be met before a GUI can be opened. Optionally, [Actions](/skiesguis/gui_config/actions/) can be defined to execute when the requirements have failed or succeeded. See [Requirements](/skiesguis/gui_config/requirements/) for more information on requirements.
+```json
+"view_requirements": {
+  "requirements": {
+    "example_requirement_1": {
+      "type": "PERMISSION",
+      "permission": "test.permission"
+    }
+  },
+  "deny_actions": {
+    "deny_action_1": {
+      "type": "MESSAGE",
+      "message": ["<red>You do not have permission!"]
+    }
+  },
+  "success_actions": {
+    "success_action_1": {
+      "type": "MESSAGE",
+      "message": ["<green>You do have permission!"]
+    }
+  }
+},
+```
+
+
+
+
