@@ -1,0 +1,42 @@
+---
+title: Animation Settings
+description: Guide to configuring an inventory opening animation's settings
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+General settings for the inventory animation.
+```json
+"settings": {
+  "title": "Opening %crate_name%",
+  "menu_type": "GENERIC_9X3",
+  "close_delay": 40,
+  "win_slots": [13]
+}
+```
+## Title
+The title of the inventory GUI shown during the animation. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"title": "Opening %crate_name%"
+```
+## Menu Type
+The type of inventory menu to use.
+```json
+"menu_type": "GENERIC_9X3"
+```
+<LinkCard
+    title="GUI Types"
+    href="/skiescrates/getting_started/gui_types/"
+    description="List of available GUI types"
+/>
+
+## Close Delay
+The number of ticks to wait after the animation ends before closing the inventory and giving the reward. Set to `0` to close immediately.
+```json
+"close_delay": 40
+```
+## Win Slots
+A list of inventory slots that are considered "winning" slots, where rewards in these slots will be given to the player.
+```json
+"win_slots": [13]
+```

@@ -1,0 +1,37 @@
+---
+title: Opening Animations
+description: Guide to configuring opening animations for crates in SkiesCrates
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+Every crate in SkiesCrates can have a custom opening animation that plays when a player opens the crate. There are 3 main animations types available:
+- **No Animation** - The crate instantly opens and gives a reward without any animation.
+- **Inventory Animation** - A GUI-based animation that displays items in an inventory interface.
+- **World Animation** - An animation that plays in the world at the crate's location using packets.
+
+All animations live in the `opening` folder inside the `config/skiescrates/animations/` directory.
+<FileTree>
+- config
+    - skiescrates
+        - openings
+            - inventory
+                - example_inventory.json
+            - world
+                - example_world.json
+</FileTree>
+
+## Inventory Animations
+<LinkCard
+    title="Inventory Animations"
+    href="/skiescrates/openings/inventory_animations/"
+    description="Guide to configuring inventory-based opening animations"
+/>
+
+## World Animations
+<LinkCard
+    title="World Animations"
+    href="/skiescrates/openings/world_animations/"
+    description="Guide to configuring world-based opening animations"
+/>

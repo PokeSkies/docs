@@ -1,0 +1,40 @@
+---
+title: Item Reward
+description: Configuration options for a ITEM reward in SkiesCrates
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+Gives an item to the player. If display is left empty, the `"item"` option will be used as the display item.
+```json
+"example_reward": {
+  "type": "ITEM",
+  "name": "<aqua>Item Reward",
+  "weight": 1,
+  "item": {
+    "item": "minecraft:diamond",
+    "name": "<aqua>Special Diamond",
+    "lore": [
+    "<gray>This is a special diamond!"
+    ]
+  }
+}
+```
+## Inherited
+All Reward Types inherit a base set of reward options. See [Reward Options](/skiescrates/rewards/#reward-options) for more information.
+## Item (required)
+The item to give to the player when this reward is selected.
+```json
+"item": {
+  "item": "minecraft:diamond",
+  "name": "<aqua>Special Diamond",
+  "lore": [
+    "<gray>This is a special diamond!"
+  ]
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>

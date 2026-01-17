@@ -1,0 +1,30 @@
+---
+title: Player Command Reward
+description: Configuration options for a COMMAND_PLAYER reward in SkiesCrates
+---
+
+Runs a command as the player, parsed by Placeholder Services.
+```json
+"example_reward": {
+  "type": "COMMND_PLAYER",
+  "name": "<aqua>Command Reward",
+  "display": {
+    "item": "minecraft:diamond"
+  },
+  "weight": 1,
+  "commands": ["give %player% minecraft:diamond 1"],
+  "permission_level": 1
+}
+```
+## Inherited
+All Reward Types inherit a base set of reward options. See [Reward Options](/skiescrates/rewards/#reward-options) for more information.
+## Commands
+A list of commands to be executed by the player when the reward is given. Commands are parsed by Placeholder Services.
+```json
+"commands": ["give %player% minecraft:diamond 1"]
+```
+## Permission Level
+The permission level the command is executed as. Defaults to the player's own permission level when not set.
+```json
+"permission_level": 1
+```

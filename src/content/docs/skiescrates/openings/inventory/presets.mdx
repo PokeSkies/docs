@@ -1,0 +1,77 @@
+---
+title: Presets
+description: Guide to configuring presets in inventory opening animations
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+Presets are reusable lists of items that can be used by Spinning Items. There are two types of presets, Rewards and Animations!
+```json"presets": {
+"presets": {
+  "rewards": {
+    "default": {}
+  },
+  "animations": {
+    "example_blocks": [
+      {
+        "item": "minecraft:stone",
+        "weight": 1,
+        "nbt": {
+          "minecraft:hide_tooltip": {}
+        }
+      },
+      {
+        "item": "minecraft:dirt",
+        "weight": 1,
+        "nbt": {
+          "minecraft:hide_tooltip": {}
+        }
+      },
+      {
+        "item": "minecraft:cobblestone",
+        "weight": 1,
+        "nbt": {
+          "minecraft:hide_tooltip": {}
+        }
+      }
+    ]
+  }
+}
+```
+
+## Reward Presets
+Reward Presets are currently unused but are planned for future versions of SkiesCrates to allow you to selectively limit certain rewards in a given animation. For the time being, you can create an empty reward preset as shown below to avoid errors.
+```json
+"rewards": {
+  "default": {}
+}
+```
+## Animation Presets
+Animation Presets are lists of items that can be referenced by Spinning Items in inventory animations. This is the core part of an animated item as a list of items must be provided to spin through. Each entry in a preset uses the same generic [Item Configuration](/skiescrates/items/item_options/) format, except an additional `"weight"` option is required to determine the likelihood of that item being selected for a spin.
+```json
+"animations": {
+  "example_blocks": [
+    {
+      "item": "minecraft:stone",
+      "weight": 1,
+      "nbt": {
+        "minecraft:hide_tooltip": {}
+      }
+    },
+    {
+      "item": "minecraft:dirt",
+      "weight": 1,
+      "nbt": {
+        "minecraft:hide_tooltip": {}
+      }
+    },
+    {
+      "item": "minecraft:cobblestone",
+      "weight": 1,
+      "nbt": {
+        "minecraft:hide_tooltip": {}
+      }
+    }
+  ]
+}
+```

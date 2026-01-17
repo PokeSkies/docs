@@ -44,6 +44,127 @@ export default defineConfig({
 								]
 							}
 						],
+					},
+					{
+						label: 'SkiesCrates',
+						link: '/skiescrates/getting_started/introduction',
+						icon: 'seti:folder',
+						items: [
+							{
+								label: "Getting Started",
+								items: [
+									'skiescrates/getting_started/introduction',
+									'skiescrates/getting_started/installation',
+									'skiescrates/getting_started/commands_permissions',
+									'skiescrates/getting_started/economies',
+									'skiescrates/getting_started/placeholders',
+									'skiescrates/getting_started/gui_types',
+									'skiescrates/getting_started/faqs'
+								]
+							},
+							{
+								label: "Main Config",
+								items: [
+									'skiescrates/config/config',
+									'skiescrates/config/keys_options',
+									'skiescrates/config/storage_options',
+									'skiescrates/config/migration_options',
+									'skiescrates/config/webhook_options',
+								]
+							},
+							{
+								label: "Crates",
+								items: [
+									'skiescrates/crates/crates',
+									'skiescrates/crates/cost_options',
+									'skiescrates/crates/failure_options',
+									'skiescrates/crates/block_options',
+									'skiescrates/crates/hologram_options',
+									'skiescrates/crates/examples'
+								]
+							},
+							{
+								label: "Rewards",
+								items: [
+									'skiescrates/rewards/rewards',
+									'skiescrates/rewards/limit_options',
+									{
+										label: "Types",
+										items: [
+											'skiescrates/rewards/types/command_console',
+											'skiescrates/rewards/types/command_player',
+											'skiescrates/rewards/types/item',
+											'skiescrates/rewards/types/pokemon',
+										]
+									}
+								]
+							},
+							{
+								label: "Keys",
+								items: [
+									'skiescrates/keys/keys',
+									'skiescrates/keys/keys_menu',
+								]
+							},
+							{
+								label: "Previews",
+								items: [
+									'skiescrates/previews/previews',
+									'skiescrates/previews/preview_settings',
+									'skiescrates/previews/preview_buttons'
+								]
+							},
+							{
+								label: "Opening Animations",
+								items: [
+									'skiescrates/openings/opening_animations',
+									{
+										label: "Inventory",
+										items: [
+											'skiescrates/openings/inventory/inventory_opening',
+											'skiescrates/openings/inventory/animation_settings',
+											'skiescrates/openings/inventory/spinning_items',
+											'skiescrates/openings/inventory/presets'
+										]
+									},
+									{
+										label: "World",
+										items: [
+											'skiescrates/openings/world/world_opening',
+											{
+												label: "Types",
+												items: [
+													'skiescrates/openings/world/types/simple_roll',
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								label: "Particles",
+								items: [
+									'skiescrates/particles/particle_animations',
+									'skiescrates/particles/particle_effects',
+									{
+										label: "Types",
+										items: [
+											'skiescrates/particles/types/circle',
+											'skiescrates/particles/types/spiral',
+											'skiescrates/particles/types/pulse',
+											'skiescrates/particles/types/beam'
+										]
+									}
+								]
+							},
+							{
+								label: "Items",
+								items: [
+									'skiescrates/items/item_options',
+									'skiescrates/items/components',
+								]
+							}
+						],
 					}
 				]),
 			],

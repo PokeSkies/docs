@@ -1,0 +1,24 @@
+---
+title: Console Command Reward
+description: Configuration options for a COMMAND_CONSOLE reward in SkiesCrates
+---
+
+Runs a command as the console, parsed by Placeholder Services.
+```json
+"example_reward": {
+  "type": "COMMND_CONSOLE",
+  "name": "<aqua>Command Reward",
+  "display": {
+    "item": "minecraft:diamond"
+  },
+  "weight": 1,
+  "commands": ["give %player% minecraft:diamond 1"]
+}
+```
+## Inherited
+All Reward Types inherit a base set of reward options. See [Reward Options](/skiescrates/rewards/#reward-options) for more information.
+## Commands
+A list of commands to be executed by the console when the reward is given. Commands are parsed by Placeholder Services.
+```json
+"commands": ["give %player% minecraft:diamond 1"]
+```

@@ -59,7 +59,7 @@ When defining components in configs, it's important to know what type of compone
 - Object - A set of (key -> value) pairs wrapped in curly braces ("example": { "a": 1, "b": "text" })
 - List - A list of values or objects wrapped in square brackets ([1, 2, 3] or [{"a": 1}, {"b": 2}])
 
-See more info about Minecraft's data types on the [Minecraft Wiki](https://minecraft.wiki/w/Java_Edition_protocol/Data_types#Definitions).
+See more info about Minecraft's data types on the <a href="https://minecraft.wiki/w/Java_Edition_protocol/Data_types#Definitions" target="_blank" rel="noopener noreferrer">Minecraft Wiki</a>.
 
 ### Type Inferencing
 A thing about components in configs is that when they get translated from JSON (the text in the config) into an actual Minecraft Component, the typing has to be inferred. Minecraft has to do a bit of guessing on what type you intended. This is obvious for some types, like Strings since there's really only one way to interpret them. It's less obvious types for things like Integers, Shorts, Longs, Bytes, Doubles, and Floats since they can all be represented as exactly the same number in some circumstances.
@@ -88,4 +88,4 @@ Here's an example of how to define a component with an explicit type:
 This will ensure that the `"example_integer"` component is always interpreted as an Integer with the value of 5, regardless of what Minecraft would normally infer.
 
 ## Available Components
-SkiesGUIs supports all vanilla Minecraft 1.21.1 components that can be applied to items. A full list of available components can be found on the [Minecraft Wiki](https://minecraft.wiki/w/Data_component_format), though the Wiki is updated to the latest versions of Minecraft, so all data may not be usable or correct.
+SkiesGUIs supports all vanilla Minecraft 1.21.1 components that can be applied to items. A full list of available components can be found on the <a href="https://minecraft.wiki/w/Data_component_format" target="_blank" rel="noopener noreferrer">Minecraft Wiki</a>, though the Wiki is updated to the latest versions of Minecraft, so all data may not be usable or correct.

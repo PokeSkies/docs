@@ -1,0 +1,87 @@
+---
+title: Preview
+description: Guide to configuring Previews for crates in SkiesCrates
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+Previews are how players can view the potential rewards of a crate before opening it. They are defined generically, meaning any crate can use any preview, simply refer to the Preview's id in the crate's [Preview](/skiescrates/crates/crates/#preview) option. Previews are paginated to allow for large numbers of rewards to be displayed.
+
+All Previews live in the `previews` folder inside the `config/skiescrates/` directory.
+<FileTree>
+- config
+    - skiescrates
+        - previews
+            - example_preview.json
+            - second_preview.json
+</FileTree>
+
+```json
+{
+  "settings": {
+    "title": "Previewing %crate_name%",
+    "menu_type": "GENERIC_9X6"
+  },
+  "buttons": {
+    "reward": {},
+    "page_next": {},
+    "page_previous": {},
+    "close": {}
+  },
+  "items": {}
+}
+```
+
+## Settings
+General settings for the Preview.
+```json
+"settings": {
+    "title": "Previewing %crate_name%",
+    "menu_type": "GENERIC_9X6"
+}
+```
+<LinkCard
+    title="Preview Settings"
+    href="/skiescrates/previews/preview_settings/"
+    description="Preview menu related settings"
+/>
+
+## Buttons
+Buttons are special items that perform actions when clicked. There are four types of buttons available: Reward, Page Next, Page Previous, and Close.
+```json
+"buttons": {
+    "reward": {},
+    "page_next": {},
+    "page_previous": {},
+    "close": {}
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+## Items
+A map list of additional items to display in the menu. These are typically used for background or decorative items.
+```json
+"items": {
+  "background": {
+    "item": "minecraft:black_stained_glass_pane",
+    "slots": [
+      0, 1, 2, 3, 4, 5, 6, 7, 8,
+      9, 10, 11, 12, 14, 15, 16, 17,
+      18, 19, 20, 21, 22, 23, 24, 25, 26
+    ],
+    "nbt": {
+      "minecraft:hide_tooltip": {}
+    }
+  }
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>

@@ -1,0 +1,61 @@
+---
+title: Particle Animations
+description: Guide to configuring Particle Animations for crates in SkiesCrates
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+Particles Animations are sequences of particles spawned around a crate on loop. Particles are precalculated and sent through packets directly to nearby players on an async thread to avoid lag.
+
+All Particle Animations live in the `particles` folder inside the `config/skiescrates/` directory.
+<FileTree>
+- config
+    - skiescrates
+        - particles
+            - example_particle.json
+            - second_particle.json
+</FileTree>
+
+```json
+{
+  "mode": "SEQUENTIAL",
+  "distance": 50.0,
+  "effects": []
+}
+```
+
+## Mode
+The animation mode that the particle animation should use when playing. Available options:
+- **CONCURRENT** - Plays all effects at the same time, looping immediately.
+- **SEQUENTIAL** - Plays each effect in the order they are defined, looping back to the start when finished.
+## Distance
+The squared Euclidean distance from the crate that the particles will be shown within. This is not blocks, but the actual distance calculation used for packets. The block distance would be the square root of this value.
+```json
+"distance": 50.0
+```
+## Effects
+A list of particle effects to play. Each effect will be played in order based on the `"mode"` option.
+```json
+"effects": [
+  {
+    "type": "",
+    "particle": {
+      "type": "minecraft:happy_villager"
+    },
+    "speed": 1,
+    "start_delay": 0,
+    "end_delay": 0,
+    "offset": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0
+    }
+  }
+]
+```
+<LinkCard
+    title="Particle Effect"
+    href="/skiescrates/particles/particle_effects/"
+    description="Configuration options for particle effects within particle animations"
+/>

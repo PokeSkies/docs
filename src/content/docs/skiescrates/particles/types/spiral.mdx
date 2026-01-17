@@ -1,0 +1,86 @@
+---
+title: Spiral Effect
+description: Configuration options for a SPIRAL particle effect in SkiesCrates
+---
+
+Spiraling effect, progressing around and down a cylinder.
+```json
+{
+  "type": "SPIRAL",
+  "particle": {
+    "type": "minecraft:happy_villager"
+  },
+  "speed": 1,
+  "start_delay": 0,
+  "end_delay": 0,
+  "offset": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 0.0
+  },
+  "radius": 1.0,
+  "points": 20,
+  "turns": 1,
+  "height": 2.0,
+  "phase": 0.0,
+  "clockwise": true,
+  "reverse": true,
+  "strands": 1,
+  "rotation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  }
+}
+```
+## Inherited
+All Particle Effect Types inherit a base set of options. See [Particle Effect Options](/skiescrates/particles/particle_effects/#particle-effect-options) for more information.
+## Radius
+The radius of the spiral.
+```json
+"radius": 1.0
+```
+## Points
+The number of points to display per strand.
+```json
+"points": 20
+```
+## Turns
+The number of turns/rotations the spiral makes around the cylinder.
+```json
+"turns": 1
+```
+## Height
+The height of the spiral in blocks.
+```json
+"height": 2.0
+```
+## Phase
+The starting angular offset of the spiral in radians.
+```json
+"phase": 0.0
+```
+## Clockwise
+Whether the spiral rotates clockwise or counter-clockwise.
+```json
+"clockwise": true
+```
+## Reverse
+Whether the spiral moves from top to bottom (true) or bottom to top (false).
+```json
+"reverse": true
+```
+## Strands
+The number of strands to display in the spiral. All strands will be evenly spaced around the cylinder.
+```json
+"strands": 1
+```
+## Rotation
+The rotation of the entire circle effect around each axis (in degrees).
+```json
+"rotation": {
+  "x": 0.0,
+  "y": 0.0,
+  "z": 0.0
+}
+```

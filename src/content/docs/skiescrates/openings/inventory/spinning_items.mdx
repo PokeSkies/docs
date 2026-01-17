@@ -1,0 +1,87 @@
+---
+title: Spinning Items
+description: Guide to configuring spinning items in inventory opening animations
+---
+
+Spinning items, or spinners, are a key concept for inventory opening animations. They are the core component that makes the animation, animated! Spinners are the generic term for an item that changes through a series of items to create a spinning effect. These spinners though have additional options to control how they spin and when. These options make spinners very customizable, allowing you to create complex animation sequences.
+
+Take a look this basic example of a spinner configuration. This spinner is an **Animated** spinner, meaning it has no impact on the final reward given to the player, nor does it affect when the crate should end. It is purely for visual effect.
+```json
+"animated": {
+  "prize": {
+    "preset": "default",
+    "mode": "INDEPENDENT",
+    "slots": [
+      0, 1, 2, 3, 5, 6, 7, 8,
+      9, 10, 11, 12, 14, 15, 16, 17,
+      18, 19, 20, 22, 23, 24, 25, 26
+    ],
+    "spin_count": 51,
+    "spin_interval": 1,
+    "start_delay": 0,
+    "change_interval": 5,
+    "change_amount": 1,
+    "sound": {}
+  }
+}
+```
+
+This spinner defined here has a lot of options, but it's actually fairly simple. Read about each of the options below to understand what they do!
+## Preset
+The item preset to use for this spinner. This is the ID of a preset defined within the inventory animation's config file. The use case depends on the Spinner Type:
+- **Reward** - This preset is mostly unused at this time, as the reward spinner uses the crate's rewards as the items to spin through.
+- **Animated** - This preset defines the list of items that this spinner will cycle through while spinning.
+```json
+"preset": "default"
+```
+## Mode
+The spinning mode for this spinner. This controls how the spinner will change the slots within this spinner. The following modes are available:
+- **INDEPENDENT** - Each slot in this spinner changes to a random item.
+- **SEQUENTIAL** - Each slot in this spinner changes in a sequence, one after another. This creates a rolling effect where each item in the list changes to the one in the previous slot and a new one is added to the start.
+- **SYNCED** - Each slot in this spinner changes to the same item.
+- **RANDOM** - Randomly changes the item in only a single slot.
+```json
+"mode": "INDEPENDENT"
+```
+## Slots
+A list of slots that this spinner will control.
+```json
+"slots": [
+  0, 1, 2, 3, 5, 6,
+  7, 8, 9, 10, 11, 12
+]
+```
+## Spin Count
+The total number of spins this spinner will perform before stopping.
+```json
+"spin_count": 51
+```
+## Spin Interval
+The **starting** interval, in ticks, between each spin of this spinner.
+```json
+"spin_interval": 1
+```
+## Start Delay
+The delay, in ticks, before this spinner starts spinning from the start of the animation.
+```json
+"start_delay": 0
+```
+## Change Interval
+The number of ticks before increase the [Spin Interval](#spin-interval) by the [Change Amount](#change-amount), in a loop.
+```json
+"change_interval": 5
+```
+## Change Amount
+The amount, in ticks, to increase the [Spin Interval](#spin-interval) by every [Change Interval](#change-interval).
+```json
+"change_amount": 1
+```
+## Sound
+The sound to play every time this spinner spins.
+```json
+"sound": {
+  "sound": "minecraft:block.note_block.xylophone",
+  "pitch": 0.5,
+  "volume": 0.5
+}
+```

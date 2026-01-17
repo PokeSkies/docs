@@ -1,0 +1,163 @@
+---
+title: Crate Configuration
+description: Guide to configure Crates for the SkiesCrates mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+Each Crate configuration is stored in its own JSON file within the `crates` folder inside the main `/config/skiescrates/` folder.
+<FileTree>
+- config
+    - skiescrates
+        - crates
+            - example_crate.json
+            - second_crate.json
+</FileTree>
+
+Every Crate has a large amount of configuration options to customize the Crate.
+```json
+{
+  "enabled": true,
+  "name": "<red>Example Crate",
+  "display": {},
+  "preview": "",
+  "animation": "",
+  "permission": "",
+  "inventory_space": -1,
+  "cost": {},
+  "cooldown": -1,
+  "failure": {},
+  "keys": {},
+  "block": {},
+  "rewards": {}
+}
+```
+
+## Enabled
+Toggles whether the crate is enabled or disabled.
+```json
+"enabled": true
+```
+## Name (required)
+The name of the crate used in many places, specifically the `%crate_name%` placeholder. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"name": "<red>Example Crate"
+```
+## Display (required)
+The item used to represent the Crate when given as an **inventory** item through the `/crate give` command. This is unrelated to the block.
+```json
+"display": {
+  "item": "minecraft:chest",
+  "name": "<red>Example Crate",
+  "lore": [
+    "<gray>Example Lore!"
+  ]
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+## Preview
+The ID of the preview menu to show when players preview the crate (left-click the crate block). Leave blank or remove for no preview menu. See [Previews](/skiescrates/previews/) for more information.
+```json
+"preview": "example_preview"
+```
+## Animation
+The ID of the animation to use when the crate is opened. Leave blank or remove for no animation, which instantly opens the crate and gives a reward. See [Opening Animations](/skiescrates/openings/base/) for more information.
+```json
+"animation": "example_animation"
+```
+## Permission
+The permission node required to open this crate. If undefined, no permission is required.
+```json
+"permission": "skiescrates.crate.example"
+```
+## Inventory Space
+The minimum amount of free inventory slots a player must have to open this crate. Set to `-1` to disable.
+```json
+"inventory_space": 5
+```
+## Cost Options
+Define the cost to open this crate. Remove or leave blank to disable costs.
+```json
+"cost": {
+  "provider": "IMPACTOR",
+  "currency": "impactor:dollars",
+  "amount": 100
+}
+```
+<LinkCard
+    title="Cost Options"
+    href="/skiescrates/crates/cost_options/"
+    description="Options for a crate's costs"
+/>
+
+## Cooldown
+The cooldown time in seconds between crate openings for each player. Set to `-1` to disable.
+```json
+"cooldown": 60
+```
+## Failure Options
+Define what happens when a player fails to open the crate for some reason, like missing keys, insufficient funds, inventory space, etc.
+```json
+"failure": {
+  "pushback": 0.5,
+  "sound": {
+    "sound": "minecraft:block.lava.extinguish",
+    "pitch": 1.0,
+    "volume": 0.5
+  }
+}
+```
+<LinkCard
+    title="Failure Options"
+    href="/skiescrates/crates/failure_options/"
+    description="Options for a crate's failure behavior"
+/>
+
+## Keys
+A map of keys IDs to the amount of each key required to open this crate. Leave empty or remove to not require any keys.
+```json
+"keys": {
+  "example_key": 1
+}
+```
+## Block Options
+The options to define how a crate placed in the world behaves.
+```json
+"block": {
+  "locations": [],
+  "hologram": {},
+  "particles": "spiral"
+}
+```
+<LinkCard
+    title="Block Options"
+    href="/skiescrates/crates/block_options/"
+    description="Options for a crate's failure behavior"
+/>
+
+## Rewards
+The list of rewards that can be given when a player opens this crate.
+```json
+"rewards": [
+  "example_reward": {
+    "type": "",
+    "name": "",
+    "display": {},
+    "weight": 1,
+    "limits": {},
+    "broadcast": false,
+    "preview": {}
+  }
+]
+```
+<LinkCard
+    title="Rewards"
+    href="/skiescrates/rewards/rewards/"
+    description="Options for a crate's reward"
+/>

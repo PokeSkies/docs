@@ -1,0 +1,216 @@
+---
+title: Particle Effects
+description: Guide to configuring Particle Effects for Particle Animations in SkiesCrates
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+Particles Effects are predefined particle shapes that can be used within Particle Animations to create visual effects when a crate is opened. There are various settings that apply to all effects, as well as specific settings for each effect type.
+
+```json
+{
+  "type": "",
+  "particle": {
+    "type": "minecraft:happy_villager"
+  },
+  "speed": 1,
+  "start_delay": 0,
+  "end_delay": 0,
+  "offset": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 0.0
+  }
+}
+```
+
+## Particle Effect Options
+### Type
+The type of particle effect to display. A list of available types can be found in [Particle Effect Types](#particle-effect-types).
+```json
+"type": "SPIRAL"
+```
+### Particle
+The particle to use for this effect. This is in Minecraft's Particle Option formatting, which allows for various options depending on the particle type. All particles have a `"type"` option that defines the particle ID. Find additional options on the Minecraft Wiki's <a href="https://minecraft.wiki/w/Particle_format" target="_blank" rel="noopener noreferrer">Particle format</a> page.
+```json
+"particle": {
+  "type": "minecraft:happy_villager"
+}
+```
+### Speed
+The speed of this particle effects animation. A particle effect is made up of frames, one particle packet per frame. This speed setting controls how many ticks a single frame lasts. `1` means each frame lasts 1 tick (20 frames per second) where `2` means each frame lasts 2 ticks (10 frames per second). Defaults to `1` if not provided.
+```json
+"speed": 1
+```
+### Start Delay
+The delay in ticks before this particle effect starts playing. Useful for sequencing multiple effects. Defaults to `0` if not provided.
+```json
+"start_delay": 0
+```
+### End Delay
+The delay in ticks after this particle effect finishes playing before the next effect starts. Useful for sequencing multiple effects. Defaults to `0` if not provided.
+```json
+"end_delay": 0
+```
+### Offset
+The offset position to apply to the particle effect. This is relative to the crate's bottom center position.
+```json
+"offset": {
+  "x": 0.0,
+  "y": 1.0,
+  "z": 0.0
+}
+```
+### Additional Options
+Additional options are available depending on the type of animation used. See [Animation Types](#animation-types) for each type's additional options.
+***
+
+## Effect Types
+These are the available Effect Types along with a short description.
+
+| Identifier | Description                                                        |
+|------------|--------------------------------------------------------------------|
+| CIRCLE     | 2D circle                                                          |
+| SPIRAL     | Spiral progressing around and down a cylinder                      |
+| PULSE      | Growing 2D circles extending from a center point to an outer width |
+| BEAM       | 2D circle progressing up/down a cylinder                           |
+
+### Circle Effect
+2D circular effect, starting at one position and progressing around the circle.
+```json
+{
+  "type": "CIRCLE",
+  "particle": {
+    "type": "minecraft:happy_villager"
+  },
+  "speed": 1,
+  "start_delay": 0,
+  "end_delay": 0,
+  "offset": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 0.0
+  },
+  "radius": 1.0,
+  "points": 20,
+  "phase": 0.0,
+  "clockwise": true,
+  "strands": 1,
+  "rotation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  }
+}
+```
+<LinkCard
+    title="Circle Effect"
+    href="/skiescrates/particles/types/circle/"
+    description="Configuration options for the CIRCLE particle effect"
+/>
+
+### Spiral Effect
+Spiraling effect, progressing around and down a cylinder.
+```json
+{
+  "type": "SPIRAL",
+  "particle": {
+    "type": "minecraft:happy_villager"
+  },
+  "speed": 1,
+  "start_delay": 0,
+  "end_delay": 0,
+  "offset": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 0.0
+  },
+  "radius": 1.0,
+  "points": 20,
+  "turns": 1,
+  "height": 2.0,
+  "phase": 0.0,
+  "clockwise": true,
+  "reverse": true,
+  "strands": 1,
+  "rotation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  }
+}
+```
+<LinkCard
+    title="Spiral Effect"
+    href="/skiescrates/particles/types/spiral/"
+    description="Configuration options for the SPIRAL particle effect"
+/>
+
+### Pulse Effect
+2D circular pulse effect, expanding from a center point to an outer width.
+```json
+{
+  "type": "PULSE",
+  "particle": {
+    "type": "minecraft:happy_villager"
+  },
+  "speed": 1,
+  "start_delay": 0,
+  "end_delay": 0,
+  "offset": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 0.0
+  },
+  "start_radius": 0.5,
+  "end_radius": 3.0,
+  "start_points": 20,
+  "end_points": 50,
+  "rings": 10,
+  "outwards": true,
+  "rotation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  }
+}
+```
+<LinkCard
+    title="Pulse Effect"
+    href="/skiescrates/particles/types/pulse/"
+    description="Configuration options for the PULSE particle effect"
+/>
+
+### Beam Effect
+2D circular beam effect, progressing up or down a cylinder.
+```json
+{
+  "type": "PULSE",
+  "particle": {
+    "type": "minecraft:happy_villager"
+  },
+  "speed": 1,
+  "start_delay": 0,
+  "end_delay": 0,
+  "offset": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 0.0
+  },
+  "radius": 1.0,
+  "points": 40,
+  "height": 10,
+  "spacing": 1.0,
+  "upwards": true,
+  "rotation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  }
+}
+```
+<LinkCard
+    title="Beam Effect"
+    href="/skiescrates/particles/types/beam/"
+    description="Configuration options for the BEAM particle effect"
+/>

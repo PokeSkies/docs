@@ -1,0 +1,77 @@
+---
+title: Key Configuration
+description: Guide to configure Keys for the SkiesCrates mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+Each Key configuration is stored in its own JSON file within the `keys` folder inside the main `/config/skiescrates/` folder.
+<FileTree>
+- config
+    - skiescrates
+        - keys
+            - example_key.json
+            - second_key.json
+</FileTree>
+
+Every Key has many configuration options to customize the key with.
+```json
+{
+  "enabled": true,
+  "name": "<red>Example Key",
+  "display": {
+    "item": "minecraft:tripwire_hook",
+    "name": "<red>Example Key",
+    "lore": [
+      "<gray>Example Lore!"
+    ],
+    "nbt": {
+      "minecraft:custom_model_data": 1
+    }
+  },
+  "virtual": true,
+  "unique": false
+}
+```
+
+## Enabled
+Toggles whether the key is enabled or disabled.
+```json
+"enabled": true
+```
+## Name (required)
+The name of the key used in many places, specifically the `%key_name%` placeholder. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"name": "<red>Example Key"
+```
+## Display (required)
+The item used to represent the key when the [Virtual](#virtual) option is disabled.
+```json
+"display": {
+  "item": "minecraft:tripwire_hook",
+  "name": "<red>Example Key",
+  "lore": [
+    "<gray>Example Lore!"
+  ],
+  "nbt": {
+    "minecraft:custom_model_data": 1
+  }
+},
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+## Virtual
+Toggles whether the key is virtual (not a physical item) or not. Virtual keys are stored in player data.
+```json
+"virtual": true
+```
+## Unique
+Toggles whether the key is unique. Unique keys will have a unique identifier added to the Custom Data component when given. Using unique keys will have their unique identifiers marked as used. This will help prevent duplication of keys.
+```json
+"unique": false
+```

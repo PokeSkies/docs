@@ -1,0 +1,195 @@
+---
+title: Rewards
+description: Configuration options for a crate's rewards in SkiesCrates
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+The list of rewards that can be given when a player opens this crate.
+```json
+"example_item_reward": {
+  "type": "COMMAND_CONSOLE",
+  "name": "<aqua><b>Diamond Reward",
+  "display": {
+    "item": "minecraft:diamond",
+    "name": "<aqua>Diamond Reward",
+    "lore": [
+      "<gray>This is a special diamond reward!"
+    ]
+  },
+  "weight": 1,
+  "limits": {
+    "player": 5,
+  },
+  "broadcast": false,
+  "preview": {
+    "item": "minecraft:diamond",
+    "name": "<aqua>Diamond Reward",
+    "lore": [
+      "<gray>This is a special diamond reward,",
+      "<gray>and it could be yours!"
+    ]
+  },
+  "commands": [
+    "give %player% minecraft:diamond 1"
+  ]
+}
+```
+***
+
+## Reward Options
+### Type
+The type of action that this entry is. A list of types can be found in [Reward Types](#reward-types).
+```json
+"type": "COMMAND_CONSOLE"
+```
+### Name
+The name of the reward, shown in various places such as chat message, the placeholder `%reward_name%`, and as a fallback for the display/preview items if not defined there. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"name": "<aqua><b>Diamond Reward"
+```
+### Display
+The item used to represent the reward in various places, such as the preview menu (unless overriden by [Preview](#preview)) and in the crate opening animation. If not defined, a fallback will be used based on the Reward Type.
+```json
+"display": {
+  "item": "minecraft:diamond",
+  "name": "<aqua>Diamond Reward",
+  "lore": [
+    "<gray>This is a special diamond reward!"
+  ]
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+### Weight
+The weight of this reward compared to other rewards. The higher the weight, the larger the increase in chance of being selected. See the FAQs on [Reward Chances](/skiescrates/getting_started/faqs/#reward-chances) for more information
+```json
+"weight": 1
+```
+### Limits
+Define limits on how many times this reward can be given. Leave blank or remove to disable any limits.
+```json
+"limits": {
+  "player": 5,
+}
+```
+<LinkCard
+    title="Limit Options"
+    href="/skiescrates/rewards/limit_options/"
+    description="Options to configure a reward's claim limits"
+/>
+
+### Broadcast
+Whether to broadcast a message to the server when a player receives this reward. Uses the message defined in the Lang Configuration file.
+```json
+"broadcast": false
+```
+### Preview
+The item used to represent the reward in the crate preview menu (left-clicking the crate block). If not defined, the [Display](#display) item will be used instead.
+```json
+"preview": {
+  "item": "minecraft:diamond",
+  "name": "<aqua>Diamond Reward",
+  "lore": [
+    "<gray>This is a special diamond reward,",
+    "<gray>and it could be yours!"
+  ]
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+### Additional Options
+Additional options are available depending on the type of action used. See [Action Types](#action-types) for each type's additional options.
+***
+
+## Reward Types
+These are the available Reward Types along with a short description and the required mods, if any.
+
+| Identifier      | Description                  | Required Mods |
+|-----------------|------------------------------|---------------|
+| COMMAND_CONSOLE | Run a command as the console |               |
+| COMMAND_PLAYER  | Run a command as the player  |               |
+| ITEM            | Give an item to the player   |               |
+| POKEMON         | Give a Pokemon to the player | Cobblemon     |
+
+### Command Console Reward
+Runs a command as the console, parsed by Placeholder Services.
+```json
+"example_reward": {
+  "type": "COMMND_CONSOLE",
+  "name": "<aqua>Command Reward",
+  "display": {
+    "item": "minecraft:diamond"
+  },
+  "weight": 1,
+  "commands": ["give %player% minecraft:diamond 1"]
+}
+```
+<LinkCard
+    title="Console Command Reward"
+    href="/skiescrates/rewards/types/command_console"
+    description="Options to configure a COMMAND_CONSOLE reward"
+/>
+
+### Command Player Reward
+Runs a command as the player, parsed by Placeholder Services.
+```json
+"example_reward": {
+  "type": "COMMND_PLAYER",
+  "name": "<aqua>Command Reward",
+  "display": {
+    "item": "minecraft:diamond"
+  },
+  "weight": 1,
+  "commands": ["give %player% minecraft:diamond 1"],
+  "permission_level": 1
+}
+```
+<LinkCard
+    title="Player Command Reward"
+    href="/skiescrates/rewards/types/command_player"
+    description="Options to configure a COMMAND_PLAYER reward"
+/>
+
+### Item Reward
+Gives an item to the player. If display is left empty, the `"item"` option will be used as the display item.
+```json
+"example_reward": {
+  "type": "ITEM",
+  "name": "<aqua>Item Reward",
+  "weight": 1,
+  "item": {
+    "item": "minecraft:diamond",
+    "name": "<aqua>Special Diamond",
+    "lore": [
+      "<gray>This is a special diamond!"
+    ]
+  }
+}
+```
+<LinkCard
+    title="Item Reward"
+    href="/skiescrates/rewards/types/item"
+    description="Options to configure a ITEM reward"
+/>
+
+### Pokemon Reward
+Gives a Cobblemon Pokemon to the player. Requires the Cobblemon mod to be installed. If display is left empty or if `"item": "cobblemon:pokemon_model"`, the Pokemon's model item will be used as the display item.
+```json
+"example_reward": {
+  "type": "POKEMON",
+  "name": "<aqua>Pokemon Reward",
+```
+<LinkCard
+    title="Pokemon Reward"
+    href="/skiescrates/rewards/types/pokemon"
+    description="Options to configure a POKEMON reward"
+/>

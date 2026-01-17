@@ -1,0 +1,74 @@
+---
+title: Pulse Effect
+description: Configuration options for a PULSE particle effect in SkiesCrates
+---
+
+2D circular pulse effect, expanding from a center point to an outer width.
+```json
+{
+  "type": "PULSE",
+  "particle": {
+    "type": "minecraft:happy_villager"
+  },
+  "speed": 1,
+  "start_delay": 0,
+  "end_delay": 0,
+  "offset": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 0.0
+  },
+  "start_radius": 0.5,
+  "end_radius": 3.0,
+  "start_points": 20,
+  "end_points": 50,
+  "rings": 10,
+  "outwards": true,
+  "rotation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  }
+}
+```
+## Inherited
+All Particle Effect Types inherit a base set of options. See [Particle Effect Options](/skiescrates/particles/particle_effects/#particle-effect-options) for more information.
+## Start Radius
+The starting radius of the first circle of the pulse effect.
+```json
+"start_radius": 0.5
+```
+## End Radius
+The ending radius of the last circle of the pulse effect.
+```json
+"end_radius": 3.0
+```
+## Start Points
+The number of particles to spawn in the first circle of the pulse effect.
+```json
+"start_points": 20
+```
+## End Points
+The number of particles to spawn in the last circle of the pulse effect.
+```json
+"end_points": 50
+```
+## Rings
+The number of circles (rings) to create in the pulse effect.
+```json
+"rings": 10
+```
+## Outwards
+Whether the pulse effect expands outwards (true) or inwards (false).
+```json
+"outwards": true
+```
+## Rotation
+The rotation of the entire circle effect around each axis (in degrees).
+```json
+"rotation": {
+  "x": 0.0,
+  "y": 0.0,
+  "z": 0.0
+}
+```

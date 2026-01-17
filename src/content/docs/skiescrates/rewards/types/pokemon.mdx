@@ -1,0 +1,71 @@
+---
+title: Pokemon Reward
+description: Configuration options for a POKEMON reward in SkiesCrates
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+Gives an item to the player. If display is left empty, the `"item"` option will be used as the display item.
+```json
+"example_reward": {
+  "type": "POKEMON",
+  "name": "<aqua>Pokemon Reward",
+  "weight": 1,
+  "pokemon": {
+    "species": "cobblemon:rayquaza",
+    "form": "",
+    "aspects": [],
+    "level": 100,
+    "shiny": true
+  }
+}
+```
+## Inherited
+All Reward Types inherit a base set of reward options. See [Reward Options](/skiescrates/rewards/#reward-options) for more information.
+## Pokemon (required)
+The Pokemon to give to the player when this reward is selected.
+```json
+"pokemon": {
+  "species": "cobblemon:rayquaza",
+  "form": "",
+  "aspects": [],
+  "level": 100,
+  "shiny": true
+}
+```
+### Species (required)
+The species of the Pokemon to give. Must be a valid Cobblemon species ID in the format `modid:species_name`. Set to `random` to give a random species (must set the Reward's `"display"` or it will fallback).
+```json
+"species": "cobblemon:rayquaza"
+```
+### Form
+The ID of the form to set the Pokemon as. Must be a valid form ID for the selected species. Leave blank or remove to use the default form.
+```json
+"form": "altered"
+```
+### Aspects
+A list of aspects to apply to the Pokemon. Uses the same formatting as Cobblemon's `/pokegive` command. Leave blank or remove to apply no aspects.
+```json
+"aspects": [
+  "ability=adaptability"
+]
+```
+### Level
+The level to set the Pokemon to. Supports both an integer value (whole number) or a object containing `"min"` and `"max"` values for a random level within the range.
+```json
+"level": 100
+```
+```json
+"level": {
+  "min": 50,
+  "max": 100
+}
+```
+### Shiny
+Set if the Pokemon is given as shiny. Supports either a boolean value (`true` or `false`) or a percentage chance between `0.0` and `1.0`. If a chance is used, the display/preview of the Pokemon will **not** be shiny.
+```json
+"shiny": true
+```
+```json
+"shiny": 0.05 // 5% chance to be shiny
+```

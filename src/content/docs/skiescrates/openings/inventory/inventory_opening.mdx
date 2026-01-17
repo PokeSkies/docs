@@ -1,0 +1,194 @@
+---
+title: Inventory Animations
+description: Guide to configuring inventory opening animations for crates in SkiesCrates
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+Inventory Animations are GUI based animations of the crate opening process. There are extensive options to configure animated, background, and reward items. This section includes some complicated concepts that may be hard to understand, so please refer to the [Examples](#examples) section for pre-made animations that can be used as a base.
+
+All inventory animations live in the `inventory` folder inside the `config/skiescrates/openings/` directory.
+<FileTree>
+- config
+    - skiescrates
+        - openings
+            - inventory
+                - example_inventory.json
+                - second_inventory.json
+</FileTree>
+
+```json
+{
+  "settings": {
+    "title": "Opening %crate_name%",
+    "menu_type": "GENERIC_9X3",
+    "close_delay": 40,
+    "win_slots": []
+  },
+  "items": {
+    "rewards": {},
+    "animated": {},
+    "static": {}
+  },
+  "presets": {
+    "rewards": {},
+    "animations": {}
+  }
+}
+```
+
+## Animation Options
+### Settings
+General settings for the inventory animation.
+```json
+"settings": {
+  "title": "Opening %crate_name%",
+  "menu_type": "GENERIC_9X3",
+  "close_delay": 40,
+  "win_slots": [13]
+}
+```
+<LinkCard
+    title="Animation Settings"
+    href="/skiescrates/openings/inventory/animation_settings/"
+    description="Settings for inventory opening animations"
+/>
+
+***
+### Items
+Items are the core mechanics to an inventory animations, being the items displayed in the inventory animation. There are three types of items that are split due to their behavior: Rewards, Animated, and Static.
+
+Rewards and Animated items are in a category known as "spinners", which mean they animate through different items during the animation process. There are various options to define how these items spin and what slots they occupy. **Importantly**, an animation is not finished until **all reward spinners** have finished spinning.
+
+Static items remain unchanged throughout the animation. These are useful for background items or borders.
+```json
+"items": {
+  "rewards": {
+    "example_spinner": {
+      // Reward item configuration here
+    }
+  },
+  "animated": {
+    "example_background": {
+        // Animated item configuration here
+    }
+  },
+  "static": {
+    "example_frame": {
+      // Static item configuration here
+    }
+  }
+}
+```
+#### Reward Items
+Reward Items are [Spinning Items](/skiescrates/openings/inventory/spinning_item) that will eventually give a reward to the player. The items they animate through are based on the crate's rewards list. Each entry in the list of `"rewards"` is an individual spinning item. The final reward items are based on the `"win_slots"` defined in the [Settings](#settings).
+```json
+"rewards": {
+  "example_spinner": {
+    "preset": "default",
+    "mode": "SEQUENTIAL",
+    "slots": [13],
+    "spin_count": 51,
+    "spin_interval": 1,
+    "start_delay": 0,
+    "change_interval": 5,
+    "change_amount": 1,
+    "sound": {
+      "sound": "minecraft:block.note_block.xylophone",
+      "pitch": 0.5,
+      "volume": 0.5
+    }
+  }
+}
+```
+<LinkCard
+    title="Spinning Itemss"
+    href="/skiescrates/openings/inventory/spinning_items/"
+    description="Options for Spinning Items in inventory opening animations"
+/>
+
+#### Animated Items
+Animated Items are [Spinning Items](/skiescrates/openings/inventory/spinning_item) that animate through are based on the defined preset list. Each entry in the list of `"animated"` is an individual spinning item.
+```json
+"animated": {
+  "prize": {
+    "preset": "default",
+    "mode": "INDEPENDENT",
+    "slots": [
+      0, 1, 2, 3, 5, 6, 7, 8,
+      9, 10, 11, 12, 14, 15, 16, 17,
+      18, 19, 20, 22, 23, 24, 25, 26
+    ],
+    "spin_count": 51,
+    "spin_interval": 1,
+    "start_delay": 0,
+    "change_interval": 5,
+    "change_amount": 1,
+    "sound": {}
+  }
+}
+```
+<LinkCard
+    title="Spinning Itemss"
+    href="/skiescrates/openings/inventory/spinning_items/"
+    description="Options for Spinning Items in inventory opening animations"
+/>
+
+#### Static Items
+Static Items are items that do not change during the animation.
+```json
+"static": {
+  "your_prize": {
+    "item": "minecraft:diamond_block",
+    "name": "<green>Your Prize!",
+    "amount": 1,
+    "slots": [4, 22]
+  }
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+### Presets
+Presets are reusable lists of items that can be used by Spinning Items.
+```json"presets": {
+"presets": {
+  "rewards": {
+    "default": {}
+  },
+  "animations": {
+    "example_blocks": [
+      {
+        "item": "minecraft:stone",
+        "weight": 1,
+        "nbt": {
+          "minecraft:hide_tooltip": {}
+        }
+      },
+      {
+        "item": "minecraft:dirt",
+        "weight": 1,
+        "nbt": {
+          "minecraft:hide_tooltip": {}
+        }
+      },
+      {
+        "item": "minecraft:cobblestone",
+        "weight": 1,
+        "nbt": {
+          "minecraft:hide_tooltip": {}
+        }
+      }
+    ]
+  }
+}
+```
+<LinkCard
+    title="Presets"
+    href="/skiescrates/openings/inventory/presets/"
+    description="Options to configure inventory animation presets"
+/>

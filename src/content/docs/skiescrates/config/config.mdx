@@ -1,0 +1,109 @@
+---
+title: Mod Configuration
+description: Guide to configure the Main Config for the SkiesCrates mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Code } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import defaultConfig from './default_config.json?raw';
+
+The guide explains configuring the main `config.json` file for SkiesCrates. The main configuration file contains global settings that affect the entire mod.
+
+<FileTree>
+- config
+    - skiescrates
+        - config.json
+</FileTree>
+
+***
+## Example File
+<Code code={defaultConfig} lang="json" title="config.json" />
+
+## Options
+### Debug
+Toggles the debugging status to make finding mistakes easier. Actual errors with the mod will still be displayed even if false. This is not recommended to leave enabled as it will display a lot of information. Can also be toggled using the command `/guis debug`.
+```json
+"debug": false
+```
+### Interaction Limiter
+Set the interaction limit rate in milliseconds, which prevents players from spamming interactions with crates. Recommended to not set too low as frequent interactions may lead to lag.
+```json
+"interaction_limiter": 1000
+```
+### Key Options
+Settings for the keys menu and command.
+```json
+"keys": {
+  "aliases" [
+    "keys"
+  ],
+  "use_menu": true
+}
+```
+<LinkCard
+    title="Keys Options"
+    href="/skiescrates/config/keys_options/"
+    description="Options for the Keys menu and command"
+/>
+
+### Storage Options
+Settings for data storage.
+```json
+"storage": {
+  "type": "SQLITE",
+  "host": "localhost",
+  "port": 27017,
+  "database": "skiescrates",
+  "username": "root",
+  "password": "",
+  "table_prefix": "skiescrates_",
+  "properties": {
+    "useUnicode": "true",
+    "characterEncoding": "utf8"
+  },
+  "pool_settings": {
+    "maximum_pool_size": 10,
+    "minimum_idle": 10,
+    "keepalive_time": 0,
+    "connection_timeout": 30000,
+    "idle_timeout": 600000,
+    "max_lifetime": 1800000
+  },
+  "url_override": ""
+}
+```
+<LinkCard
+    title="Storage Options"
+    href="/skiescrates/config/storage_options/"
+    description="Options for data storage"
+/>
+
+### Migration Options
+Settings for data migration!
+```json
+"migration": {
+  "keys": []
+}
+```
+<LinkCard
+    title="Migration Options"
+    href="/skiescrates/config/migration_options/"
+    description="Options for migration"
+/>
+
+### Webhook Options
+Settings for sending Discord webhooks on certain events.
+```json
+"webhooks": {
+  "duplicate_key": {
+    "url": ""
+  }
+}
+```
+<LinkCard
+    title="Webhook Options"
+    href="/skiescrates/config/webhook_options/"
+    description="Options for Discord webhooks"
+/>

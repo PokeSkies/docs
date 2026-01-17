@@ -1,0 +1,108 @@
+---
+title: Keys Menu
+description: Guide to configure the Keys Menu for the SkiesCrates mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+The Keys Menu is the GUI that players can use to view their virtual Crate Keys, if the [Use Menu](/skiescrates/config/keys_options/#use_menu) option is enabled in the Main Config. The Keys Menu can be configured at `/config/skiescrates/menus/keys.json`.
+<FileTree>
+- config
+    - skiescrates
+        - menus
+            - keys.json
+</FileTree>
+
+```json
+{
+  "title": "Keys",
+  "menu_type": "GENERIC_9X3",
+  "keys": {
+    "example_key": {
+      "item": "minecraft:tripwire_hook",
+      "slots": [ 13 ],
+      "name": "<green><b>Example Crate Key",
+      "lore": [
+        "<gray>Example Lore!",
+        "",
+        "<green><b>Keys:</b></green> <white>%key_amount%"
+      ]
+    }
+  },
+  "items": {
+    "background": {
+      "item": "minecraft:black_stained_glass_pane",
+      "slots": [
+        0, 1, 2, 3, 4, 5, 6, 7, 8,
+        9, 10, 11, 12, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26
+      ],
+      "nbt": {
+        "minecraft:hide_tooltip": {}
+      }
+    }
+  }
+}
+
+```
+## Title
+The title of the inventory GUI. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"title": "Opening %crate_name%"
+```
+## Menu Type
+The type of inventory menu to use.
+```json
+"menu_type": "GENERIC_9X3"
+```
+<LinkCard
+    title="GUI Types"
+    href="/skiescrates/getting_started/gui_types/"
+    description="List of available GUI types"
+/>
+
+## Keys
+A map list of Crate Keys to display in the menu. The identifier for this map should be the ID of the Key, which is the name of the file for the [Key Configuration](/skiescrates/keys/keys). The value is the display of the item in the menu.
+```json
+"keys": {
+  "example_key": {
+    "item": "minecraft:tripwire_hook",
+    "slots": [ 13 ],
+    "name": "<green><b>Example Crate Key",
+    "lore": [
+      "<gray>Example Lore!",
+      "",
+      "<green><b>Keys:</b></green> <white>%key_amount%"
+    ]
+  }
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+## Items
+A map list of additional items to display in the menu. These are typically used for background or decorative items.
+```json
+"items": {
+  "background": {
+    "item": "minecraft:black_stained_glass_pane",
+    "slots": [
+      0, 1, 2, 3, 4, 5, 6, 7, 8,
+      9, 10, 11, 12, 14, 15, 16, 17,
+      18, 19, 20, 21, 22, 23, 24, 25, 26
+    ],
+    "nbt": {
+      "minecraft:hide_tooltip": {}
+    }
+  }
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>

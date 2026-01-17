@@ -1,0 +1,87 @@
+---
+title: Preview Buttons
+description: Guide to configuring the buttons for a Preview menu in SkiesCrates
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+Buttons are special items that perform actions when clicked. There are four types of buttons available: Reward, Page Next, Page Previous, and Close.
+```json
+"buttons": {
+    "reward": {},
+    "page_next": {},
+    "page_previous": {},
+    "close": {}
+}
+```
+## Reward Button
+Used to define where rewards are displayed and what their name and lore is. The item used is pulled from the reward's display setting. If a reward has a [Preview](/skiescrates/rewards/rewards/#preview) display defined, that is used instead.
+```json
+"reward": {
+  "slots": [
+    10, 11, 12, 13, 14, 15, 16,
+    19, 20, 21, 22, 23, 24, 25,
+    28, 29, 30, 31, 32, 33, 34,
+    37, 38, 39, 40, 41, 42, 43
+  ],
+  "name": "%reward_name%",
+  "lore": [
+    "<gray>Example Lore!",
+    "<gray>Weight: <white>%reward_weight%",
+    "<gray>Chance: <white>%reward_percent%"
+  ]
+}
+```
+## Page Next Button
+Used to navigate to the next page of rewards in the preview menu, if available.
+```json
+"page_next": {
+  "slots": [53],
+  "item": "minecraft:arrow",
+  "name": "<green>Next Page",
+  "lore": [
+      "<gray>Click to view next page"
+  ]
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+## Page Previous Button
+Used to navigate to the previous page of rewards in the preview menu, if available.
+```json
+"page_previous": {
+  "slots": [45],
+  "item": "minecraft:arrow",
+  "name": "<green>Previous Page",
+  "lore": [
+      "<gray>Click to view previous page"
+  ]
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+## Close Button
+Used to close the preview menu.
+```json
+"close": {
+  "slots": [49],
+  "item": "minecraft:barrier",
+  "name": "<red>Close",
+  "lore": [
+      "<gray>Click to close menu"
+  ]
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiescrates/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>

@@ -1,0 +1,68 @@
+---
+title: Beam Effect
+description: Configuration options for a BEAM particle effect in SkiesCrates
+---
+
+2D circular beam effect, progressing up or down a cylinder.
+```json
+{
+  "type": "PULSE",
+  "particle": {
+    "type": "minecraft:happy_villager"
+  },
+  "speed": 1,
+  "start_delay": 0,
+  "end_delay": 0,
+  "offset": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 0.0
+  },
+  "radius": 1.0,
+  "points": 40,
+  "height": 10,
+  "spacing": 1.0,
+  "upwards": true,
+  "rotation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  }
+}
+```
+## Inherited
+All Particle Effect Types inherit a base set of options. See [Particle Effect Options](/skiescrates/particles/particle_effects/#particle-effect-options) for more information.
+## Radius
+The radius of the circular beam effect.
+```json
+"radius": 1.0
+```
+## Points
+The number of points to use in the circular beam effect.
+```json
+"points": 40
+```
+## Height
+The total height of the beam effect.
+```json
+"height": 10
+```
+## Spacing
+The spacing between each circle of the beam effect.
+```json
+"spacing": 1.0
+```
+## Upwards
+Whether the beam effect progresses upwards (true) or downwards (false).
+```json
+"upwards": true
+```
+## Rotation
+The rotation of the entire circle effect around each axis (in degrees).
+```json
+"rotation": {
+  "x": 0.0,
+  "y": 0.0,
+  "z": 0.0
+}
+```

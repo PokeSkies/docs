@@ -1,0 +1,29 @@
+---
+title: Preview Settings
+description: Guide to configuring the settings for a Preview menu in SkiesCrates
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+General settings for the Preview.
+```json
+"settings": {
+    "title": "Previewing %crate_name%",
+    "menu_type": "GENERIC_9X6"
+}
+```
+## Title
+The title of the inventory GUI. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"title": "Previewing %crate_name%"
+```
+## Menu Type
+The type of inventory menu to use.
+```json
+"menu_type": "GENERIC_9X6"
+```
+<LinkCard
+    title="GUI Types"
+    href="/skiescrates/getting_started/gui_types/"
+    description="List of available GUI types"
+/>

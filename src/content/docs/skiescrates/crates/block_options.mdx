@@ -1,0 +1,76 @@
+---
+title: Block Options
+description: Configuration options for a crate's block location in SkiesCrates
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+The options to define how a crate placed in the world behaves.
+```json
+"block": {
+  "locations": [],
+  "hologram": {},
+  "particles": "spiral"
+}
+```
+## Locations
+The in-world locations that this crate is placed at. Use the commands `/crate set <crate_id>` or `/crate remove` to add and remove crate locations easily. Leave empty to not place the crate in the world.
+```json
+"locations": [
+  {
+    "dimension": "minecraft:overworld",
+    "x": 0,
+    "y": 64,
+    "z": 0
+  }
+]
+```
+## Hologram Options
+The options for the hologram displayed above each crate block location. Requires the <a href="https://modrinth.com/mod/holodisplays" target="_blank" rel="noopener noreferrer">HoloDisplays</a> mod to be installed.
+```json
+"hologram": {
+  "text": [
+    "<red>Example Crate"
+  ],
+  "offset": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 0.0
+  },
+  "scale": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+  },
+  "rotation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "billboard": "VERTICAL",
+  "background": {
+    "color": "000000",
+    "opacity": 50
+  },
+  "shadow": true,
+  "opacity": 1.0,
+  "update_rate": 100,
+  "view_distance": 50.0
+}
+```
+<LinkCard
+  title="Hologram Options"
+  href="/skiescrates/crates/hologram_options/"
+  description="Options for a crate's holograms"
+/>
+
+## Particle
+The ID of the particle animation to display around the crate block location. Leave option blank to disable particles.
+```json
+"particles": "helix"
+```
+<LinkCard
+    title="Particle Options"
+    href="/skiescrates/particles/Particles/"
+    description="Options for a particle animation"
+/>
