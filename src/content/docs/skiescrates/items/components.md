@@ -1,9 +1,9 @@
 ---
 title: Components
-description: Guide to using Components within the SkiesGUIs mod
+description: Guide to using Components within the SkiesCrates mod
 ---
 
-Components are the 1.20.5+ system of applying data to items, blocks, entities, and more. This partially replaces the older NBT system used in previous versions with some helpful new features. However, even though components have replaced NBT for the better, it not always the most intuitive and knowledge of the old NBT system can cause some confusion. This page will explain how to use Components, and specifically the unique features supplied to them with SkiesGUIs.
+Components are the 1.20.5+ system of applying data to items, blocks, entities, and more. This partially replaces the older NBT system used in previous versions with some helpful new features. However, even though components have replaced NBT for the better, it not always the most intuitive and knowledge of the old NBT system can cause some confusion. This page will explain how to use Components, and specifically the unique features supplied to them with SkiesCrates.
 
 ## Understanding Components
 ### Components in Minecraft
@@ -17,7 +17,7 @@ In this example, we see the item id (diamond_sword) followed by square brackets 
 For the example, we see two components with the keys `"custom_name"` and `"enchantments"`. The value for `"custom_name"` is a text component that defines how the name should appear, and the value for `"enchantments"` is an object of enchantment data. The specific keys and values for a component depend on what component your trying to use. More information on that later!
 
 ### Components in Configs
-Components in configs are fundamentally the same, but formatting-wise have some differences. For example, if we wanted to convert this example give command with the components to a SkiesGUIs item configuration, it would look something like this:
+Components in configs are fundamentally the same, but formatting-wise have some differences. For example, if we wanted to convert this example give command with the components to a SkiesCrates item configuration, it would look something like this:
 ```json
 {
   "items": {
@@ -42,7 +42,7 @@ If you compare the `"components"` field in this example to the give command, you
 2. Keys and string values are wrapped in double quotes
 3. Quotes inside string values are escaped with a backslash (`\"`)
 
-These differences are the core of converting from the in-game command format to the JSON format. What's even better is there's a command provided by SkiesGUIs to help with the component conversion! The unfortunately named (because nbt got changed to components) `/guis printnbt` command will print out the Component data of the item your actively holding in valid JSON formatting.
+These differences are the core of converting from the in-game command format to the JSON format. 
 
 ### Component Types
 A hidden thing about components is that there are different types of components. Some components are just simple values, like an integer, booleans, and strings. Other components can get more complex with more complicated structures, like the `"enchantments"` component in the previous example. Lastly, some components are lists of values or objects, like the `"lore"` component. These are a series of the same type of values in a comma separated list.
@@ -72,7 +72,7 @@ Take this example into consideration:
 ```
 Most people would interpret this as an Integer component with the value of 5. However, Minecraft could also interpret this as a Short, Long, or Byte since 5 is a valid value for all those types. In this case, Minecraft will choose the smallest type that can hold the value, which would be a Byte. This can cause issues when trying to compare two Item Stacks with components since two items that look identical may have different component types, causing them to not match.
 
-So how would you ensure the correct type is used? Well for SkiesGUIs a system was implemented to allow you to explicitly define the type of a component. This is done by wrapping the value in an object with two fields: `"type"` and `"value"`. The `"type"` field is a string representing the desired component type, and the `"value"` field is the actual value of the component.
+So how would you ensure the correct type is used? Well for SkiesCrates a system was implemented to allow you to explicitly define the type of a component. This is done by wrapping the value in an object with two fields: `"type"` and `"value"`. The `"type"` field is a string representing the desired component type, and the `"value"` field is the actual value of the component.
 
 Here's an example of how to define a component with an explicit type:
 ```json
@@ -88,4 +88,4 @@ Here's an example of how to define a component with an explicit type:
 This will ensure that the `"example_integer"` component is always interpreted as an Integer with the value of 5, regardless of what Minecraft would normally infer.
 
 ## Available Components
-SkiesGUIs supports all vanilla Minecraft 1.21.1 components that can be applied to items. A full list of available components can be found on the <a href="https://minecraft.wiki/w/Data_component_format" target="_blank" rel="noopener noreferrer">Minecraft Wiki</a>, though the Wiki is updated to the latest versions of Minecraft, so all data may not be usable or correct.
+SkiesCrates supports all vanilla Minecraft 1.21.1 components that can be applied to items. A full list of available components can be found on the <a href="https://minecraft.wiki/w/Data_component_format" target="_blank" rel="noopener noreferrer">Minecraft Wiki</a>, though the Wiki is updated to the latest versions of Minecraft, so all data may not be usable or correct.

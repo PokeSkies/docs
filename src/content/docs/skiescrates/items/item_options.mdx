@@ -1,7 +1,9 @@
 ---
 title: Item Options
-description: Guide to configure generic items's appearance and data in the SkiesCrates mod
+description: Guide to configure generic item's appearance and data in the SkiesCrates mod
 ---
+
+import { LinkCard } from '@astrojs/starlight/components';
 
 This page describes configuring an item in JSON config formatting and the available options for them.
 ## Item Options
@@ -21,7 +23,7 @@ This option is not always available depending on the context of the item. For ex
 A list of slots that this item will be inserted into. This value should be between `0` and the (`size` * 9) - 1. EX: if `"size: 3"`, then between `0` and `26`. Defaults to an empty list if not provided.
 :::tip
 Some options are flexible-lists, meaning you can either set it to a specific value or define a list!
-> `"slots": 1`<br>
+> `"slots": 1`<br></br>
 > `"slots": [1, 2, 3]`
 :::
 ```json
@@ -68,39 +70,19 @@ Components are the new way of defining item NBT in Minecraft. They replaced the 
   "minecraft:hide_additional_tooltip": {}
 }
 ```
-### Priority
-The priority of this item to the defined slots compared to other items. The closer to 0, the higher the priority. Useful in combination with [View Requirements](#view-requirements) to display different items using conditionals. Defaults to 0 if not provided.
+<LinkCard
+    title="Components"
+    href="/skiescrates/items/components/"
+    description="Guide to configuring item components (nbt)"
+/>
+
+### Actions
+:::warning
+This option is not always available depending on the context of the item. For example, in a Reward's `"display": {}` configuration, the actions setting is not available, but it is for the `"items"` section of a Preview GUI.
+:::
+A list of Actions that are executed when the item is clicked on. See [Actions](/skiescrates/items/actions/) for more information.
 ```json
-"priority": 10
-```
-### View Requirements
-Define when an item is allowed to be displayed using conditionals. All listed requirements must be met in order for the item to be displayed. Useful in combination with [Priority](#priority) to display different items using conditionals. Optionally, [Actions](/skiesguis/gui_config/actions/) can be defined to execute when the requirements have failed or succeeded. See [Requirements](/skiesguis/gui_config/requirements/) for more information on requirements.
-```json
-"view_requirements": {
-  "requirements": {
-    "example_requirement_1": {
-      "type": "PERMISSION",
-      "permission": "test.permission"
-    }
-  },
-  "deny_actions": {
-    "deny_action_1": {
-      "type": "MESSAGE",
-      "message": ["<red>You do not have permission!"]
-    }
-  },
-  "success_actions": {
-    "success_action_1": {
-      "type": "MESSAGE",
-      "message": ["<green>You do have permission!"]
-    }
-  }
-},
-```
-### Click Actions
-A list of Actions that are executed when the item is clicked on. The [Click Type](/skiesguis/gui_config/actions/#click-types) must be correct and any [Click Requirements](#click-requirements) defined must succeed before the actions are executed. See [Actions](/skiesguis/gui_config/actions/) for more information.
-```json
-"click_actions": {
+"actions": {
   "action_1": {
     "type": "COMMAND_CONSOLE",
     "click": "ANY",
@@ -113,30 +95,11 @@ A list of Actions that are executed when the item is clicked on. The [Click Type
   }
 }
 ```
-### Click Requirements
-Define when an item's actions are allowed to be executed when clicked on using conditionals. All listed requirements must be met in order for any actions to be ran or checked. Optionally, [Actions](/skiesguis/gui_config/actions/) can be defined to execute when the requirements have failed or succeeded. See [Requirements](/skiesguis/gui_config/requirements/) for more information on requirements.
-```json
-"click_requirements": {
-  "requirements": {
-    "example_requirement_1": {
-      "type": "PERMISSION",
-      "permission": "test.permission"
-    }
-  },
-  "deny_actions": {
-    "deny_action_1": {
-      "type": "MESSAGE",
-      "message": ["<red>You do not have permission!"]
-    }
-  },
-  "success_actions": {
-    "success_action_1": {
-      "type": "MESSAGE",
-      "message": ["<green>You do have permission!"]
-    }
-  }
-},
-```
+<LinkCard
+    title="Actions"
+    href="/skiescrates/items/actions/"
+    description="Guide to configure item click actions"
+/>
 
 ## Supported Items
 The `"item": ""` option supports a variety of inputs, either default `mod_id:item_id` identifiers or special keywords for specific item types. All inputs are parsed against any Placeholder Services.
@@ -153,58 +116,31 @@ Player Heads can be set using the special keyword `playerhead` followed by an op
 
 ## Example Item Definition
 ```json
-{
-  "title": "<dark_gray>Example GUI",
-  "size": 3,
-  "items": {
-    "item_1": {
-      "item": "minecraft:diamond_sword",
-      "slots": [0],
-      "count": 1,
-      "name": "<blue><b>Example Sword",
-      "lore": ["<gray><italic>Example lore!"],
-      "components": {
-        "minecraft:enchantments": {
-          "levels": {
-            "minecraft:unbreaking": 3
-          },
-          "show_in_tooltip": false
-        },
-        "minecraft:hide_additional_tooltip": {}
+"item_1": {
+  "item": "minecraft:diamond_sword",
+  "slots": [0],
+  "count": 1,
+  "name": "<blue><b>Example Sword",
+  "lore": ["<gray><italic>Example lore!"],
+  "components": {
+    "minecraft:enchantments": {
+      "levels": {
+        "minecraft:unbreaking": 3
       },
-      "priority": 1,
-      "view_requirements": {
-        "requirements": {
-            "requirement_1": {
-                "type": "PERMISSION",
-                "permission": "test.permission"
-            }
-        },
-        "success_actions": {},
-        "deny_actions": {}
-      },
-      "click_requirements": {
-        "requirements": {
-            "requirement_1": {
-                "type": "PERMISSION",
-                "permission": "test.permission.2"
-            }
-        },
-        "success_actions": {},
-        "deny_actions": {}
-      },
-      "actions": {
-        "action_1": {
-          "type": "COMMAND_CONSOLE",
-          "click": "ANY",
-          "commands": ["give %player% diamond_sword 1"]
-        },
-        "action_2": {
-          "type": "MESSAGE",
-          "click": "ANY",
-          "message": ["<blue>You have received the Example Sword!"]
-        }
-      }
+      "show_in_tooltip": false
+    },
+    "minecraft:hide_additional_tooltip": {}
+  },
+  "actions": {
+    "action_1": {
+      "type": "COMMAND_CONSOLE",
+      "click": "ANY",
+      "commands": ["give %player% diamond_sword 1"]
+    },
+    "action_2": {
+      "type": "MESSAGE",
+      "click": "ANY",
+      "message": ["<blue>You have received the Example Sword!"]
     }
   }
 }

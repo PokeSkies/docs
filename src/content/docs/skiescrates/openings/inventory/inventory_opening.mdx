@@ -20,12 +20,10 @@ All inventory animations live in the `inventory` folder inside the `config/skies
 
 ```json
 {
-  "settings": {
-    "title": "Opening %crate_name%",
-    "menu_type": "GENERIC_9X3",
-    "close_delay": 40,
-    "win_slots": []
-  },
+  "title": "Opening %crate_name%",
+  "type": "GENERIC_9X3",
+  "close_delay": 40,
+  "win_slots": [],
   "items": {
     "rewards": {},
     "animated": {},
@@ -39,23 +37,32 @@ All inventory animations live in the `inventory` folder inside the `config/skies
 ```
 
 ## Animation Options
-### Settings
-General settings for the inventory animation.
+### Title
+The title of the inventory GUI shown during the animation. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
 ```json
-"settings": {
-  "title": "Opening %crate_name%",
-  "menu_type": "GENERIC_9X3",
-  "close_delay": 40,
-  "win_slots": [13]
-}
+"title": "Opening %crate_name%"
+```
+### Type
+The type of inventory menu to use.
+```json
+"type": "GENERIC_9X3"
 ```
 <LinkCard
-    title="Animation Settings"
-    href="/skiescrates/openings/inventory/animation_settings/"
-    description="Settings for inventory opening animations"
+    title="GUI Types"
+    href="/skiescrates/getting_started/gui_types/"
+    description="List of available GUI types"
 />
 
-***
+### Close Delay
+The number of ticks to wait after the animation ends before closing the inventory and giving the reward. Set to `0` to close immediately.
+```json
+"close_delay": 40
+```
+### Win Slots
+A list of inventory slots that are considered "winning" slots, where rewards in these slots will be given to the player.
+```json
+"win_slots": [13]
+```
 ### Items
 Items are the core mechanics to an inventory animations, being the items displayed in the inventory animation. There are three types of items that are split due to their behavior: Rewards, Animated, and Static.
 

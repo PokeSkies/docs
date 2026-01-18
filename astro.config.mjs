@@ -109,9 +109,7 @@ export default defineConfig({
 							{
 								label: "Previews",
 								items: [
-									'skiescrates/previews/previews',
-									'skiescrates/previews/preview_settings',
-									'skiescrates/previews/preview_buttons'
+									'skiescrates/previews/previews'
 								]
 							},
 							{
@@ -122,7 +120,6 @@ export default defineConfig({
 										label: "Inventory",
 										items: [
 											'skiescrates/openings/inventory/inventory_opening',
-											'skiescrates/openings/inventory/animation_settings',
 											'skiescrates/openings/inventory/spinning_items',
 											'skiescrates/openings/inventory/presets'
 										]
@@ -162,6 +159,7 @@ export default defineConfig({
 								items: [
 									'skiescrates/items/item_options',
 									'skiescrates/items/components',
+									'skiescrates/items/actions'
 								]
 							}
 						],
