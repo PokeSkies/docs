@@ -16,29 +16,36 @@ Welcome to the documentation for the SkiesCrates mod! This guide will help you g
 SkiesCrates is a server-sided fabric mod that allows server admins to create custom Crates for players to interact with to earn rewards. The mod is highly configurable and uses JSON files for all configuration, allowing for organization and relative ease of use.
 
 The mod supports a variety of features, including:
-- Practically infinite Crates with tons of customization options
+- Create practically infinite crates *(idk, haven't tested that)*
+    - Crates can either be physically placed or given as an inventory item
 - Define keys with advanced options
-  - Physical keys with customizable items
-  - Virtual keys stored in a database
-  - Anti-dupe systems when setting physical keys as "unique"
-- Create infinite rewards for crates with many customizable options
-  - 4 reward types, including: COMMAND_CONSOLE, COMMAND_PLAYER, ITEM, and POKEMON (Cobblemon required)
-  - Weighted rewards for random chance crates
-  - Display options when opening and previewing crates
-  - Overridable display when previewing rewards
-  - Apply limits on how many times a player can earn a reward
-  - Automatic broadcast option
-- Create infinite customizable preview menus so that each crate feels unique
-- Inventory and In-World crate opening animation types
-  - Inventory openings support deep customization of the animation sequence
-  - In-World openings are packet based allowing for multiple players to open the crate at once
-- Hologram support with HoloDisplays integrations
+    - Physical keys with customizable items
+    - Virtual keys stored in a database
+    - Anti-dupe systems when setting physical keys as "unique"
+    - Keys support multiple crates and crates support multiple keys
+- Create custom rewards for crates with tons of customization
+    - 4 reward types, including: COMMAND_CONSOLE, COMMAND_PLAYER, ITEM, and POKEMON (Cobblemon required)
+    - Weighted rewards for random chance crates
+    - Display options when opening and previewing crates
+    - Overridable display when previewing rewards
+    - Apply limits on how many times a player can earn a reward
+    - Automatic broadcast option
+- Customizable crate preview menus for viewing potential crate rewards
+    - Supports different preview menus for each crate
+- Create your own crate opening animations customize them extensively
+    - Inventory openings support deep customization of the animation sequence (6 includes by default!)
+    - In-World openings are packet based allowing for multiple players to open the crate at once
+- Per-player reward limiting
+- Per-player crate cooldowns.
+- Customizable broadcast messages for certain rewards
+- Crate animation early cancelling supported
+- Hologram support through HoloDisplays integrations
 - Customizable idle particle effects/animations
-- Built in /keys menu to view your virtual keys (disableable)
-- Economy integration with many Economy mods
+- Built in /keys menu to view your virtual keys (disableable and customize commands)
+- Economy integration with many Economy mods (Impactor, BEconomy, CobbleDollars, etc)
+- Placeholder support with popular Placeholder APIs (TextPlaceholderAPI, MiniPlaceholders, etc)
 - All customizable items support custom names, lore, enchantments, and more (anything that is a component/nbt can be applied)
-- Placeholder support with popular Placeholder APIs
-- And much more!
+- And more!
 
 ## Getting Started
 1. [Introduction](/skiescrates/getting_started/introduction/)
