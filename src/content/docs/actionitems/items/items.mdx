@@ -1,0 +1,119 @@
+---
+title: Item Configuration
+description: Configuration options for item presets in Action Items
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+Each Action Item preset configuration is stored in its own JSON file within the `items` folder inside the main `/config/actionitems/` folder.
+<FileTree>
+- config
+    - actionitems
+        - items
+            - example_item.json
+            - second_item.json
+</FileTree>
+
+There are a base set of configuration options for every Action Item. The only required option is the `"display"` section.
+
+```json
+{
+  "display": {
+    "item": "minecraft:diamond",
+    "name": "<red><b>Example Item",
+    "lore": [
+      "<gray>Click to use this item!"
+    ]
+  },
+  "actions": [],
+  "requirements": {
+    "requirements": [],
+    "success_actions": [],
+    "deny_actions": []
+  },
+  "cooldown": 5,
+  "limit": 0,
+  "consume": true
+}
+```json
+{
+  "display": {
+    "item": "minecraft:diamond",
+    "name": "<red><b>Example Item",
+    "lore": [
+      "<gray>Click to use this item!"
+    ]
+  },
+  "actions": [],
+  "requirements": {
+    "requirements": [],
+    "success_actions": [],
+    "deny_actions": []
+  },
+  "cooldown": 5,
+  "limit": 0,
+  "consume": true
+}
+
+```
+## Display (required)
+The item used to represent the Action Item. This is the item that players will see in their inventory.
+```json
+"display": {
+  "item": "minecraft:diamond",
+  "name": "<red><b>Example Item",
+  "lore": [
+    "<gray>Click to use this item!"
+  ]
+}
+```
+<LinkCard
+    title="Display Configuration"
+    href="/actionitems/items/display_options/"
+    description="Options to configure a Display Item's appearance and data"
+/>
+
+## Actions
+The list of actions to perform when the item is used.
+```json
+"actions": []
+```
+<LinkCard
+    title="Actions"
+    href="/actionitems/items/actions/"
+    description="List of available actions for Action Items"
+/>
+
+## Requirements
+The requirements that must be met in order to use the item.
+```json
+"requirements": {
+  "requirements": [],
+  "success_actions": [],
+  "deny_actions": []
+}
+```
+<LinkCard
+    title="Requirements"
+    href="/actionitems/items/requirements/"
+    description="List of available requirements for Action Items"
+/>
+
+## Cooldown
+The per-player cooldown time in seconds after using the item. Set to `0` to disable. Use the `/actionitems resetcooldown` command to reset cooldowns.
+```json
+"cooldown": 5
+```
+
+## Limit
+The maximum number of times a player can use this item. Set to `0` to disable. Use the `/actionitems resetuses` command to reset usage counts.
+```json
+"limit": 0
+```
+
+## Consume
+Whether to consume one of the item when used.
+```json
+"consume": true
+```

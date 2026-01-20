@@ -1,0 +1,65 @@
+---
+title: Mod Configuration
+description: Guide to configure the Main Config for the ActionItems mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Code } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import defaultConfig from './default_config.json?raw';
+
+The guide explains configuring the main `config.json` file for Actionitems. The main configuration file contains global settings that affect the entire mod.
+
+<FileTree>
+- config
+    - actionitems
+        - config.json
+</FileTree>
+
+***
+## Example File
+<Code code={defaultConfig} lang="json" title="config.json" />
+
+## Options
+***
+### Debug
+Toggles the debugging status to make finding mistakes easier. Actual errors with GUIs will still be displayed even if false. This is not recommended to leave enabled as it will display a lot of information. Can also be toggled using the command `/guis debug`.
+```json
+"debug": false
+```
+### Interaction Cooldown
+Set the interaction cooldown rate in milliseconds, which prevents players from spamming interactions with Action Items.
+```json
+"interaction_cooldown": 1000
+```
+### Storage Options
+Settings for data storage.
+```json
+"storage": {
+  "type": "SQLITE",
+  "host": "localhost",
+  "port": 27017,
+  "database": "actionitems",
+  "username": "root",
+  "password": "",
+  "table_prefix": "actionitems_",
+  "properties": {
+    "useUnicode": "true",
+    "characterEncoding": "utf8"
+  },
+  "pool_settings": {
+    "maximum_pool_size": 10,
+    "minimum_idle": 10,
+    "keepalive_time": 0,
+    "connection_timeout": 30000,
+    "idle_timeout": 600000,
+    "max_lifetime": 1800000
+  },
+  "url_override": ""
+}
+```
+<LinkCard
+    title="Storage Options"
+    href="/actionitems/config/storage_options/"
+    description="Options for data storage"
+/>

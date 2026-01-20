@@ -1,0 +1,100 @@
+---
+title: Display Options
+description: Guide to configure Display Item's appearance and data in the ActionItems mod
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+This page describes configuring an item in JSON config formatting and the available options for them.
+## Item Options
+The additional item options are in a MAP format (key -> value). Below are the available options for items.
+### Item (required)
+An item resource location (combination of `mod_id:item_id`). This can be any item, vanilla or modded. Unknown item stacks will default to `minecraft:air`. See the [Supported Items](#supported-items) section for more information on supported items.
+```json
+"item": "minecraft:stone"
+```
+### Name
+The name to override the item with. Defaults to the item's normal name if not provided. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"name": "<red>Example Stone"
+```
+### Lore
+A list of lore to override the item with. Defaults to an empty list if not provided. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"lore": [
+  "<gray>Example Line 1",
+  "<gray>Example Line 2"
+]
+```
+### Custom Model Data
+An number representing the Custom Model Data of the item. This is a quick option for the `"minecraft:custom_model_data"` component, added for ease of use. Not applied if not provided.
+```json
+"custom_model_data": 123456
+```
+### Components (nbt)
+> Aliases: `nbt`
+
+A list of components that are set onto the item. This follows the same formatting as applying components to an item via `/give`. No additional components are applied if not provided.
+:::note
+Components are the new way of defining item NBT in Minecraft. They replaced the older NBT format in versions 1.20.5+. For more information on components, see the <a href="https://minecraft.wiki/w/Data_component_format" target="_blank" rel="noopener noreferrer">Minecraft Wiki on Data Components</a>.
+:::
+```json
+"components": {
+  "minecraft:enchantments": {
+    "levels": {
+    "minecraft:unbreaking": 3
+    },
+    "show_in_tooltip": false
+  },
+  "minecraft:hide_additional_tooltip": {}
+}
+```
+<LinkCard
+    title="Components"
+    href="/actionitems/items/components/"
+    description="Guide to configuring item components (nbt)"
+/>
+
+## Supported Items
+The `"item": ""` option supports a variety of inputs, either default `mod_id:item_id` identifiers or special keywords for specific item types. All inputs are parsed against any Placeholder Services.
+### Vanilla Items
+Vanilla items can be called on using either `minecraft:<item_id>` or just `<item_id>`. For example, both `minecraft:stone` and `stone` will give a stone block.
+### Modded Items
+Modded items can be called on using their full `mod_id:item_id` identifier. For example, `cobblemon:poke_ball` will give a Poke Ball item from Cobblemon.
+### Player Heads
+Player Heads can be set using the special keyword `playerhead` followed by an option specifier. Below are available option specifiers:
+- `playerhead` - Gives the head of the player viewing the GUI.
+- `playerhead-<uuid>` - Gives the head of the player with the specified UUID. This will work if the player is offline but must have played on the server before.
+- `playerhead-<username>` - Gives the head of the player with the specified username. This will only work if the player is online.
+- `playerhead-<base64>` - Gives a custom head with the texture specified by the base64 string. Useful for custom heads from head databases.
+
+## Example Item Definition
+```json
+"item_1": {
+  "item": "minecraft:diamond_sword",
+  "name": "<blue><b>Example Sword",
+  "lore": ["<gray><italic>Example lore!"],
+  "components": {
+    "minecraft:enchantments": {
+      "levels": {
+        "minecraft:unbreaking": 3
+      },
+      "show_in_tooltip": false
+    },
+    "minecraft:hide_additional_tooltip": {}
+  },
+  "actions": [
+    {
+      "type": "COMMAND_CONSOLE",
+      "click": "ANY",
+      "commands": ["give %player% diamond_sword 1"]
+    },
+    {
+      "type": "MESSAGE",
+      "click": "ANY",
+      "message": ["<blue>You have received the Example Sword!"]
+    }
+  ],
+  "requirements": []
+}
+```

@@ -163,7 +163,42 @@ export default defineConfig({
 								]
 							}
 						],
-					}
+					},
+					{
+						label: 'ActionItems',
+						link: '/actionitems/getting_started/introduction',
+						icon: 'star',
+						items: [
+							{
+								label: "Getting Started",
+								items: [
+									'actionitems/getting_started/introduction',
+									'actionitems/getting_started/installation',
+									'actionitems/getting_started/commands_permissions',
+									'actionitems/getting_started/economies',
+									'actionitems/getting_started/placeholders',
+									'actionitems/getting_started/faqs'
+								]
+							},
+							{
+								label: "Main Config",
+								items: [
+									'actionitems/config/config',
+									'actionitems/config/storage_options'
+								]
+							},
+							{
+								label: "Items",
+								items: [
+									'actionitems/items/items',
+									'actionitems/items/display_options',
+									'actionitems/items/actions',
+									'actionitems/items/requirements',
+									'actionitems/items/components'
+								]
+							}
+						],
+					},
 				]),
 			],
 			components: {
