@@ -24,7 +24,7 @@ Generally, all requirement sections follow the below format. To understand what 
 ### Requirements (required)
 A MAP of requirements that need to be checked. Each entry needs its unique string identifier. In this example below. It has two requirements defined within the `"requirements": {}` section: `requirement_1` and `requirement_2`.
 ```json
-"<type_>requirement": {
+"<type_>requirements": {
   "requirements": {
     "requirement_1": {
       "type": "PERMISSION",
@@ -42,22 +42,22 @@ A MAP of requirements that need to be checked. Each entry needs its unique strin
 }
 ```
 #### Type (required)
-The type of action that this entry is. A list of types can be found in [Action Types](#action-types).
+The type of requirement that this entry is. A list of types can be found in [Requirement Types](#requirement-types).
 ```json
-"type": "MESSAGE"
+"type": "PERMISSION"
 ```
 #### Comparison
-The type of comparison that this requirement should do. The usage changes depending on the requirement used. See [Comparison Types](#comparison-types) for more information. Defaults to == (equals) if not provided.
+The type of comparison that this requirement should do. The usage changes depending on the requirement used. See [Comparison Types](#comparison-types) for more information.
 ```json
 "comparison": "=="
 ```
 #### Additional Options
-Additional options are available depending on the type of action used. See [Requirement Types](#requirement-types) for each type's additional options.
+Additional options are available depending on the type of requirement used. See [Requirement Types](#requirement-types) for each type's additional options.
 ***
 ### Success Actions
 A MAP of actions that are performed when all requirements has succeeded. Each entry needs its unique string identifier. See [Actions](/skiesguis/gui_config/actions/) for more information.
 ```json
-"<type_>requirement": {
+"<type_>requirements": {
   "requirements": {},
   "success_actions": {
     "success_action_1": {
@@ -72,7 +72,7 @@ A MAP of actions that are performed when all requirements has succeeded. Each en
 ### Deny Actions
 A MAP of actions that are performed when any requirement has failed. Each entry needs its unique string identifier. See [Actions](/skiesguis/gui_config/actions/) for more information.
 ```json
-"<type_>requirement": {
+"<type_>requirements": {
   "requirements": {},
   "success_actions": {},
   "deny_actions": {
@@ -87,7 +87,7 @@ A MAP of actions that are performed when any requirement has failed. Each entry 
 ### Minimum Requirements
 The minimum number of requirements that must succeed in order for the overall requirements to be considered successful.
 ```json
-"<type_>requirement": {
+"<type_>requirements": {
   "requirements": {},
   "success_actions": {},
   "deny_actions": {},
@@ -98,7 +98,7 @@ The minimum number of requirements that must succeed in order for the overall re
 ### Stop At Success
 A boolean value that defines whether to stop checking requirements after the minimum successful requirements are met. Defaults to `false` if not provided.
 ```json
-"<type_>requirement": {
+"<type_>requirements": {
   "requirements": {},
   "success_actions": {},
   "deny_actions": {},

@@ -22,8 +22,8 @@ Components in configs are fundamentally the same, but formatting-wise have some 
 {
   "items": {
     "example_item": {
-      "id": "minecraft:diamond_sword",
-      "count": 1,
+      "item": "minecraft:diamond_sword",
+      "amount": 1,
       "components": {
         "custom_name": "[{\"text\":\"Custom Name\",\"italic\":false}]",
         "enchantments": {

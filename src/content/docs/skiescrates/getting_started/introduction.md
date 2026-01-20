@@ -67,13 +67,13 @@ The mod supports a variety of features, including:
 ### Base Config
 1. [Main Configuration](/skiescrates/config/config/)
   <br>Guide to configure the main `config.json` file for SkiesCrates. These settings apply globally to the mod.
-   1. [Keys Options](/skiescrates/config/config/keys_options/)
+   1. [Keys Options](/skiescrates/config/keys_options/)
      <br>Configuration options for the Keys menu and command
-   2. [Storage Options](/skiescrates/config/config/storage_options/)
+   2. [Storage Options](/skiescrates/config/storage_options/)
      <br>Configuration options for the storage system used by SkiesCrates
-   3. [Migration Options](/skiescrates/config/config/migration_options/)
+   3. [Migration Options](/skiescrates/config/migration_options/)
      <br>Configuration options for migrating data
-   4. [Webhook Options](/skiescrates/config/config/webhook_options/)
+   4. [Webhook Options](/skiescrates/config/webhook_options/)
      <br>Configuration options for Discord webhooks
 2. [Lang Configuration](/skiescrates/config/lang/)
   <br>Guide to customizing the messages for SkiesCrates
