@@ -1,0 +1,14 @@
+{
+  "key": {
+    "namespace": "impactor",
+    "value": "cobbledollars"
+  },
+  "name": "CobbleDollar",
+  "plural": "CobbleDollars",
+  "symbol": "€",
+  "formatting": {
+    "condensed": "<symbol><amount>",
+    "expanded": "<amount> <name>"
+  },
+  "transferable": true
+}

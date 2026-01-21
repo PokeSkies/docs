@@ -1,0 +1,70 @@
+---
+title: Mod Configuration
+description: Guide to configure the Main Config for the CobbleDollars Bridge mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Code } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import defaultConfig from './default_config.json?raw';
+
+The guide explains configuring the main `config.json` file for CobbleDollars Bridge. The main configuration file contains global settings that affect the entire mod.
+
+<FileTree>
+- config
+    - cobbledollarsbridge
+        - config.json
+</FileTree>
+
+***
+## Example File
+<Code code={defaultConfig} lang="json" title="config.json" />
+
+## Options
+***
+### Key
+Define the ID that will be registered for the CobbleDollars currency in Impactor.
+```json
+"key": {
+  "namespace": "impactor",
+  "value": "cobbledollars"
+}
+```
+### Name
+Set the display name for the CobbleDollars currency, singular form.
+```json
+"name": "CobbleDollar"
+```
+### Plural
+Set the plural display name for the CobbleDollars currency.
+```json
+"plural": "CobbleDollars"
+```
+### Symbol
+Set the symbol used to represent CobbleDollars.
+```json
+"symbol": "€"
+```
+### Formatting
+Define the formatting pattern for displaying CobbleDollars amounts. Valid placeholders: `<symbol>`, `<amount>`, `<name>`
+```json
+"formatting": {
+  "condensed": "<symbol><amount>",
+  "expanded": "<amount> <name>"
+}
+```
+#### Condensed
+Format used for compact displays of CobbleDollars amounts.
+```json
+"condensed": "<symbol><amount>"
+```
+#### Expanded
+Format used for detailed displays of CobbleDollars amounts.
+```json
+"expanded": "<amount> <name>"
+```
+### Transferable
+Enable or disable the ability for players to pay CobbleDollars between each other through Impactor.
+```json
+"transferable": true
+```

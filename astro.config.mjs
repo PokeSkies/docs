@@ -199,6 +199,26 @@ export default defineConfig({
 							}
 						],
 					},
+					{
+						label: 'CobbleDollars Bridge',
+						link: '/cobbledollarsbridge/getting_started/introduction',
+						icon: 'open-book',
+						items: [
+							{
+								label: "Getting Started",
+								items: [
+									'cobbledollarsbridge/getting_started/introduction',
+									'cobbledollarsbridge/getting_started/installation'
+								]
+							},
+							{
+								label: "Main Config",
+								items: [
+									'cobbledollarsbridge/config/config'
+								]
+							},
+						],
+					},
 				]),
 			],
 			components: {
