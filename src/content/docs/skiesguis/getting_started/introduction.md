@@ -43,7 +43,7 @@ The mod supports a variety of features, including:
 
 ### Configuration
 #### Base Config
-1. [Main Configuration](/skiesguis/main_config/)
+1. [Main Configuration](/skiesguis/config/main_config/)
    <br>Guide to configure the main `config.json` file for SkiesGUIs. These features apply globally to the mod.
 
 #### GUI Configuration

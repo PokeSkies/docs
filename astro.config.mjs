@@ -18,7 +18,7 @@ export default defineConfig({
 					{
 						label: 'SkiesGUIs',
 						link: '/skiesguis/getting_started/introduction',
-						icon: 'open-book',
+						icon: 'laptop',
 						items: [
 							{
 								label: "Getting Started",
@@ -31,7 +31,12 @@ export default defineConfig({
 									'skiesguis/getting_started/faqs'
 								]
 							},
-							"skiesguis/main_config",
+							{
+								label: "Main Config",
+								items: [
+									"skiesguis/config/main_config",
+								]
+							},
 							{
 								label: "GUIs",
 								items: [
