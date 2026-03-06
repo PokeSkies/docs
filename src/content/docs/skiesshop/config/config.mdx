@@ -1,0 +1,157 @@
+---
+title: Mod Configuration
+description: Guide to configure the Main Config for the SkiesShop mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Code } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import defaultConfig from './default_config.json?raw';
+
+The guide explains configuring the main `config.json` file for SkiesShop. The main configuration file contains global settings that affect the entire mod.
+
+<FileTree>
+- config
+    - skiesshop
+        - confirm_menus
+        - shops
+        - presets
+        - config.json
+</FileTree>
+
+***
+## Example File
+<Code code={defaultConfig} lang="json" title="config.json" />
+
+## Options
+### Debug
+Toggles the debugging status to make finding mistakes easier. Actual errors with the mod will still be displayed even if false. This is not recommended to leave enabled as it will display a lot of information. Can also be toggled using the command `/guis debug`.
+```json
+"debug": false
+```
+### Commands
+Set the commands/aliases the mod registers for the main commands.
+```json
+"commands": [
+  "skiesshop", "shops", "shop"
+]
+```
+### Base Shop
+The ID of the shop to open when a player uses one of the mod's [Commands](#commands). No ID specified will result in an error.
+```json
+"base_shop": "example_categories"
+```
+### Entry Lore
+The lore to display on entries in the shop menus. The lore used depends on whether the entry is buy-only, sell-only, or both. Placeholders are available to use in the lore, and the placeholder `%display_item_lore%` can be used to insert the lore of the entries Display option.
+```json
+"entry_lore": {
+  "buy": [
+    "%display_item_lore%",
+    "",
+    "<green><b>Buy Price:</b> <white>%buy_price% %buy_price_currency%",
+    "",
+    "<gray>Left-Click to buy this item"
+  ],
+  "sell": [
+    "%display_item_lore%",
+    "",
+    "<red><b>Sell Price:</b> <white>%sell_price% %sell_price_currency%",
+    "",
+    "<gray>Right-Click to sell this item"
+  ],
+  "buy_sell": [
+    "%display_item_lore%",
+    "",
+    "<green><b>Buy Price:</b> <white>%buy_price% %buy_price_currency%",
+    "<red><b>Sell Price:</b> <white>%sell_price% %sell_price_currency%",
+    "",
+    "<gray>Left-Click to buy this item",
+    "<gray>Right-Click to sell this item"
+  ]
+}
+```
+### Click Options
+Defines what happens when a player clicks on an entry in the shop menu. A map of the [Click Type](#click-types) to the [Click Action](#click-actions) that should be executed when that click type is done.
+```json
+"click_options": {
+  "ANY_LEFT_CLICK": {
+    "type": "OPEN_CONFIRM_MENU",
+    "transactions": [
+      "buy"
+    ],
+    "menu": "example_buy"
+  },
+  "ANY_RIGHT_CLICK": {
+    "type": "OPEN_CONFIRM_MENU",
+    "transactions": [
+      "sell"
+    ],
+    "menu": "example_sell"
+  }
+}
+```
+### Storage Options
+Settings for data storage.
+```json
+"storage": {
+  "type": "SQLITE",
+  "host": "localhost",
+  "port": 27017,
+  "database": "skiesshop",
+  "username": "root",
+  "password": "",
+  "table_prefix": "skiesshop_",
+  "properties": {
+    "useUnicode": "true",
+    "characterEncoding": "utf8"
+  },
+  "pool_settings": {
+    "maximum_pool_size": 10,
+    "minimum_idle": 10,
+    "keepalive_time": 0,
+    "connection_timeout": 30000,
+    "idle_timeout": 600000,
+    "max_lifetime": 1800000
+  },
+  "url_override": ""
+}
+```
+<LinkCard
+    title="Storage Options"
+    href="/skiesshop/config/storage_options/"
+    description="Options for data storage"
+/>
+
+### Logging Options
+Settings for logging transactions. This mirrors the settings for data storage, but allows you to define a different source for transaction logs if desired. Includes a `"enabled"` option to toggle transaction logging on or off.
+```json
+"logging": {
+  "enabled": true,
+  "type": "SQLITE",
+  "host": "localhost",
+  "port": 27017,
+  "database": "skiesshop",
+  "username": "root",
+  "password": "",
+  "table_prefix": "skiesshop_",
+  "properties": {
+    "useUnicode": "true",
+    "characterEncoding": "utf8"
+  },
+  "pool_settings": {
+    "maximum_pool_size": 10,
+    "minimum_idle": 10,
+    "keepalive_time": 0,
+    "connection_timeout": 30000,
+    "idle_timeout": 600000,
+    "max_lifetime": 1800000
+  },
+  "url_override": ""
+}
+```
+<LinkCard
+    title="Storage Options"
+    href="/skiesshop/config/storage_options/"
+    description="Options for data storage"
+/>
