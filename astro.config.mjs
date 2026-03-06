@@ -170,6 +170,47 @@ export default defineConfig({
 						],
 					},
 					{
+						label: 'SkiesShop',
+						link: '/skiesshop/getting_started/introduction',
+						icon: 'seti:folder',
+						items: [
+							{
+								label: "Getting Started",
+								items: [
+									'skiesshop/getting_started/introduction',
+									'skiesshop/getting_started/installation',
+									'skiesshop/getting_started/commands_permissions',
+									'skiesshop/getting_started/economies',
+									'skiesshop/getting_started/placeholders',
+									'skiesshop/getting_started/gui_types',
+									'skiesshop/getting_started/faqs'
+								]
+							},
+							{
+								label: "Main Config",
+								items: [
+									'skiesshop/config/config',
+									'skiesshop/config/storage_options'
+								]
+							},
+							{
+								label: "Shops",
+								items: [
+									'skiesshop/shops/shops',
+									'skiesshop/shops/entries'
+								]
+							},
+							{
+								label: "Items",
+								items: [
+									'skiesshop/items/item_options',
+									'skiesshop/items/components',
+									'skiesshop/items/actions'
+								]
+							}
+						],
+					},
+					{
 						label: 'ActionItems',
 						link: '/actionitems/getting_started/introduction',
 						icon: 'star',
