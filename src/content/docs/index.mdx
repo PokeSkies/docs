@@ -16,102 +16,104 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+
+import Card from 'starlight-plugin-icons/components/Card.astro';
+import { CardGrid } from '@astrojs/starlight/components';
 
 ## Available Mods
 
 <CardGrid stagger>
-	<Card title="SkiesGUIs" icon="laptop">
+	<Card title="SkiesGUIs" icon="i-mdi:laptop-windows" bordered>
 		Server-sided custom GUIs for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/skiesguis/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation available [here](/skiesguis/getting_started/introduction/)
 	</Card>
-    <Card title="SkiesCrates" icon="seti:folder">
+    <Card title="SkiesCrates" icon="i-mdi:treasure-chest-outline" bordered>
         Server-sided customizable Crates with rewards for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/skiescrates/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation available [here](/skiescrates/getting_started/introduction/)
     </Card>
-    <Card title="SkiesShop" icon="basket">
+    <Card title="SkiesShop" icon="i-mdi:cart-outline" bordered>
         Server-sided customizable Shop Menus for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/skiesshop/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation available [here](/skiesshop/getting_started/introduction/)
     </Card>
-    <Card title="ActionItems" icon="star">
+    <Card title="ActionItems" icon="i-mdi:diamond-outline" bordered>
         Server-sided customizable item presets with actions and requirements for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/actionitems/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation available [here](/actionitems/getting_started/introduction/)
     </Card>
-    <Card title="CobbleDollars Bridge" icon="open-book">
+    <Card title="CobbleDollars Bridge" icon="i-mdi:bridge" bordered>
         Server-sided bridge between CobbleDollars and Impactor for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/cobbledollars-bridge/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation available [here](/cobbledollarsbridge/getting_started/introduction/)
     </Card>
-    <Card title="SkiesKits" icon="add-document">
+    <Card title="SkiesKits" icon="i-mdi:sword" bordered>
         Server-sided customizable Kits for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/skieskits/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
 	</Card>
-	<Card title="SkiesAnnouncements" icon="setting">
+	<Card title="SkiesAnnouncements" icon="i-mdi:bullhorn-outline" bordered>
         Server-sided automatic timed announcements for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/skiesannouncements/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
 	</Card>
-	<Card title="SkiesClear" icon="open-book">
+	<Card title="SkiesClear" icon="i-mdi:trash-can-outline" bordered>
         Server-sided automatic item, entity, and Pokemon clearing for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/skiesclear/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
 	</Card>
-    <Card title="SkiesSkins" icon="open-book">
+    <Card title="SkiesSkins" icon="i-mdi:tshirt-crew-outline" bordered>
         Server-sided Cobblemon Pokemon skin management and shop system for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/skins/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
     </Card>
-    <Card title="CobblemonPlaceholders" icon="open-book">
+    <Card title="CobblemonPlaceholders" icon="i-mdi:puzzle-outline" bordered>
         Server-sided Cobblemon placeholder integration for TextPlaceholderAPI, MiniPlaceholders, and Impactor for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/cobblemonplaceholders/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
     </Card>
-    <Card title="Redeemed" icon="open-book">
+    <Card title="Redeemed" icon="i-mdi:key-variant" bordered>
         Server-sided redeemable codes system for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/redeemed/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
     </Card>
-    <Card title="RandomCollections" icon="open-book">
+    <Card title="RandomCollections" icon="i-mdi:basket-outline" bordered>
         Server-sided system to deliver players randomized rewards from predefined collections for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/randomcollections/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
     </Card>
-    <Card title="SkiesJoinMessages" icon="open-book">
+    <Card title="SkiesJoinMessages" icon="i-mdi:plus-minus-variant" bordered>
         Server-sided customizable join/leave messages for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/skiesjoinmessages/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
     </Card>
-    <Card title="CobblemonNPCUtils" icon="open-book">
+    <Card title="CobblemonNPCUtils" icon="i-mdi:account-outline" bordered>
         Server-sided Cobblemon NPC utilities and molang functions for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/cobblemonnpcutils/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
     </Card>
-    <Card title="CobbleScale" icon="open-book">
+    <Card title="CobbleScale" icon="i-mdi:arrow-up-down" bordered>
         Server-sided Cobblemon level scaling spawns mod for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/cobblescale/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
         📖 Documentation coming soon!
     </Card>
-    <Card title="ImpactorPlaceholders" icon="open-book">
+    <Card title="ImpactorPlaceholders" icon="i-mdi:puzzle-plus-outline" bordered>
         Server-sided Impactor placeholder integration for TextPlaceholderAPI and MiniPlaceholders for Fabric servers
 
         💾 Available for free on <a href="https://modrinth.com/project/impactorplaceholders/" target="_blank" rel="noopener noreferrer">Modrinth</a>.<br />
