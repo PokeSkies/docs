@@ -1,0 +1,96 @@
+---
+title: Presets
+description: Guide to configure Entry Presets for the SkiesShop mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+To make configuring shops easier, you can create Shop Entry Presets, which allow you to reuse the same configuration for multiple Shop Entries without having to copy and paste the same configuration details multiple times. This also makes editing a price for a given preset much easier as the price will be reflected everywhere the preset is used.
+
+Each Preset configuration is stored in either its own JSON file or together in JSON files within the `presets` folder inside the main `/config/skiesshops/` folder.
+<FileTree>
+    - config
+        - skiesshop
+            - presets
+                - dirt_preset.json
+                - many_presets.json
+</FileTree>
+
+## Creating Presets
+
+### Single Preset File
+Each Preset can be stored in its own JSON file with the preset ID as the file name:
+<FileTree>
+    - config
+        - skiesshop
+            - presets
+                - example_preset.json
+</FileTree>
+
+```json
+{
+  "type": "ITEM",
+  "item": "minecraft:diamond",
+  "buy": {
+    "price": 1,
+    "economy": "IMPACTOR",
+    "currency": "impactor:dollars"
+  },
+  "sell": {
+    "price": 1,
+    "economy": "IMPACTOR",
+    "currency": "impactor:dollars"
+  }
+}
+```
+
+This setup would result in a preset with the ID `example_preset` of type `ITEM` with the specified buy/sell prices.
+
+### Multiple Presets File
+Alternatively, multiple presets can be stored together in a single JSON file as a MAP of preset ID to preset configuration:
+<FileTree>
+    - config
+        - skiesshop
+            - presets
+                - many_presets.json
+</FileTree>
+
+```json
+{
+  "example_preset": {
+    "type": "ITEM",
+    "item": "minecraft:diamond",
+    "buy": {
+      "price": 1,
+      "economy": "IMPACTOR",
+      "currency": "impactor:dollars"
+    },
+    "sell": {
+      "price": 1,
+      "economy": "IMPACTOR",
+      "currency": "impactor:dollars"
+    }
+  },
+  "second_preset": {
+    "type": "COMMAND",
+    "command": "/give @p minecraft:diamond",
+    "buy": {
+      "price": 1,
+      "economy": "IMPACTOR",
+      "currency": "impactor:dollars"
+    }
+  }
+}
+```
+
+This setup would result in two presets with the IDs `example_preset` and `second_preset` with their respective configurations.
+
+## Using Presets
+To use a preset in a Shop Entry, simply set the entry's type to `PRESET` and it will use the ID of the entry as the desired preset. For example, with the above `example_preset`, you could create a Shop Entry like this:
+```json
+"example_entry": {
+  "type": "PRESET"
+}
+```
+
+This will effectively copy the configuration from the `example_preset` preset into this Shop Entry, so it will be an `ITEM` type entry that sells/buys diamonds for 1 dollar.

@@ -5,7 +5,6 @@ description: Guide to configure the Main Config for the SkiesShop mod
 
 import { FileTree } from '@astrojs/starlight/components';
 import { Code } from '@astrojs/starlight/components';
-import { Badge } from '@astrojs/starlight/components';
 import { LinkCard } from '@astrojs/starlight/components';
 import defaultConfig from './default_config.json?raw';
 
@@ -71,12 +70,24 @@ The lore to display on entries in the shop menus. The lore used depends on wheth
   ]
 }
 ```
+<LinkCard
+    title="Entry Lore"
+    href="/skiesshop/config/entry_lore/"
+    description="Options for defining shop entry lore"
+/>
+
 ### Click Options
-Defines what happens when a player clicks on an entry in the shop menu. A map of the [Click Type](#click-types) to the [Click Action](#click-actions) that should be executed when that click type is done.
+Defines what happens when a player clicks on an entry in the shop menu. A map of the [Click Type](/skiesshop/config/click_options/#click-types) to the [Click Action](/skiesshop/config/click_options/#click-actions) that should be executed when that click type is done.
 ```json
 "click_options": {
   "ANY_LEFT_CLICK": {
     "type": "OPEN_CONFIRM_MENU",
+    "sound": {
+      "id": "minecraft:ui.button.click",
+      "source": "MASTER",
+      "volume": 0.5,
+      "pitch": 0.5
+    },
     "transactions": [
       "buy"
     ],
@@ -84,6 +95,12 @@ Defines what happens when a player clicks on an entry in the shop menu. A map of
   },
   "ANY_RIGHT_CLICK": {
     "type": "OPEN_CONFIRM_MENU",
+    "sound": {
+      "id": "minecraft:ui.button.click",
+      "source": "MASTER",
+      "volume": 0.5,
+      "pitch": 0.5
+    },
     "transactions": [
       "sell"
     ],
@@ -91,6 +108,12 @@ Defines what happens when a player clicks on an entry in the shop menu. A map of
   }
 }
 ```
+<LinkCard
+    title="Click Options"
+    href="/skiesshop/config/click_options/"
+    description="Options for defining shop entry click behavior"
+/>
+
 ### Storage Options
 Settings for data storage.
 ```json

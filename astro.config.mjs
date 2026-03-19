@@ -190,14 +190,26 @@ export default defineConfig({
 								label: "Main Config",
 								items: [
 									'skiesshop/config/config',
-									'skiesshop/config/storage_options'
+									'skiesshop/config/entry_lore',
+									'skiesshop/config/click_options',
+									'skiesshop/config/storage_options',
 								]
 							},
 							{
 								label: "Shops",
 								items: [
 									'skiesshop/shops/shops',
-									'skiesshop/shops/entries'
+									'skiesshop/shops/entry',
+									'skiesshop/shops/price_configuration',
+									'skiesshop/shops/requirements',
+									'skiesshop/shops/presets'
+								]
+							},
+							{
+								label: "Confirm Menus",
+								items: [
+									'skiesshop/confirm_menus/confirm_menus',
+									'skiesshop/confirm_menus/amount_selectors'
 								]
 							},
 							{

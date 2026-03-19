@@ -1,0 +1,103 @@
+---
+title: Confirm Menus
+description: Guide to configure Confirm Menus for the SkiesShop mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+Confirm Menus are a the menus that appear after a player clicks on a Shop Entry, asking the player to confirm their purchase/sale. They can be configured to have custom titles, items, and actions. Multiple Confirm Menus can be created and used for different purposes.
+
+Each Confirm Menu configuration is stored in its own JSON file within the `cofnirm_menus` folder inside the main `/config/skiesshops/` folder.
+<FileTree>
+    - config
+        - skiesshop
+            - confirm_menus
+                - example_buy.json
+                - example_sell.json
+</FileTree>
+
+Every Confirm Menu has a large set of configuration options to customize the menu!
+```json
+{
+  "title": "Select Amount to Buy",
+  "type": "GENERIC_9x3",
+  "entry_slot": 13,
+  "back_on_transaction": true,
+  "amounts": {},
+  "items": {}
+}
+```
+
+## Title
+The message displayed at the top of the GUI. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"title": "<dark_gray>Example Title"
+```
+## Type
+The type of inventory menu to use.
+```json
+"type": "GENERIC_9X3"
+```
+<LinkCard
+    title="GUI Types"
+    href="/skiesshop/getting_started/gui_types/"
+    description="List of available GUI types"
+/>
+
+## Entry Slot
+The slot that the Shop Entry being bought/sold will be displayed in.
+```json
+"entry_slot": 13
+```
+## Back on Transaction
+Whether to automatically go back to the Shop menu after a successful transaction. If `false`, the player will stay in the Confirm Menu after buying/selling. Default value is `true`.
+```json
+"back_on_transaction": true
+```
+## Amounts
+A MAP of amount options for the player to select when confirming their transaction. Each entry is a unique string identifier with a set of options for this amount selector.
+```json
+"amounts": {
+  "1": {
+    "item": "minecraft:lime_stained_glass",
+    "amount": 1,
+    "slot": 9,
+    "type": "BUY",
+    "name": "<green>Buy 1",
+    "lore": [
+      "<gray>Click to purchase"
+    ]
+  }
+}
+```
+<LinkCard
+    title="Amount Selectors"
+    href="/skiesshop/confirm_menu/amount_selectors/"
+    description="Guide to configure Amount Selectors for Confirm Menus"
+/>
+
+## Items (required)
+A MAP of items to display. Each entry needs its unique string identifier. These items support actions, which are executed when clicked on! See the [Items](/skiesguis/gui_config/items/) page for more information.
+```json
+"items": {
+  "back": {
+    "item": "minecraft:barrier",
+    "slot": 26,
+    "name": "<red>Back to Shop",
+    "lore": [
+      "<gray>Click to go back to the shop"
+    ],
+    "actions": {
+      "back": {
+        "type": "BACK"
+      }
+    }
+  }
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiesshop/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
