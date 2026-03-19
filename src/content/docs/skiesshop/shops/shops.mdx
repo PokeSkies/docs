@@ -1,0 +1,94 @@
+---
+title: Shop Configuration
+description: Guide to configure Shops for the SkiesShop mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+Each Shop configuration is stored in its own JSON file within the `shops` folder inside the main `/config/skiesshops/` folder.
+<FileTree>
+- config
+    - skiesshop
+        - shops
+            - example_shop.json
+            - second_shop.json
+</FileTree>
+
+Every Shop has a large set of configuration options to customize the Shop!
+```json
+{
+  "title": "Example Shop",
+  "type": "GENERIC_9x6",
+  "entries": {},
+  "items": {}
+}
+```
+
+## Title
+The title of the GUI for the shop. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"title": "<red>Example Shop"
+```
+
+## Entries
+A list of Shop entries that can appear inside a shop for the player. Each entry in the list is a MAP (key, value pair) entry of ID with a Shop Entry defined. There are multiple types of Shop Entries, each type has some shared and unique settings.
+```json
+"entries": {
+  "dirt": {
+    "type": "ITEM",
+    "slot": 0,
+    "page": [
+      1
+    ],
+    "item": "minecraft:dirt",
+    "buy": {
+      "price": 1,
+      "economy": "IMPACTOR",
+      "currency": "impactor:dollars"
+    },
+    "sell": {
+      "price": 1,
+      "economy": "IMPACTOR",
+      "currency": "impactor:dollars"
+    }
+  }
+}
+```
+<LinkCard
+    title="Shop Entry"
+    href="/skiesshop/shops/entry/"
+    description="Options for a shop's entries"
+/>
+
+## Items
+A list of additional items to be displayed in the Shop's GUI. Each item in the list is a MAP (key, value pair) entry of ID with item options. These items cannot be bought and are used for decoration or action purposes (like pagination, category UIs, etc.).
+```json
+"static": {
+  "background": {
+    "item": "minecraft:black_stained_glass_pane",
+    "slots": [
+      45, 46, 47, 48, 49, 50, 51, 52, 53
+    ]
+  },
+  "back": {
+    "item": "minecraft:barrier",
+    "slot": 45,
+    "name": "<red>Back to Categories",
+    "lore": [
+      "<gray>Click to go back to the categories"
+    ],
+    "actions": {
+      "open_shop": {
+        "type": "OPEN_SHOP",
+        "id": "example_categories"
+      }
+    }
+  }
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiesshop/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>

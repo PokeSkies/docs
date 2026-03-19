@@ -1,0 +1,118 @@
+---
+title: Shop Entry
+description: Guide to configure Shops for the SkiesShop mod
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+```json
+"entries": {
+  "dirt": {
+    "type": "ITEM",
+    "slot": 0,
+    "page": [ 1 ],
+    "item": "minecraft:dirt",
+    "buy": {
+      "price": 1,
+      "economy": "IMPACTOR",
+      "currency": "impactor:dollars"
+    },
+    "sell": {
+      "price": 1,
+      "economy": "IMPACTOR",
+      "currency": "impactor:dollars"
+    }
+  },
+  "command_example": {
+    "type": "COMMAND",
+    "slot": 2,
+    "page": [ 1 ],
+    "item": "minecraft:dirt",
+    "buy": {
+      "price": 1,
+      "economy": "IMPACTOR",
+      "currency": "impactor:dollars"
+    }
+  },
+  "example_boots": {
+    "type": "PRESET"
+  }
+}
+```
+
+## Entry Options
+### Type (required)
+The type of shop entry that this is. A list of types can be found in [Entry Types](#entry-types).
+```json
+"type": "ITEM"
+```
+### Display (required)
+The item used to represent the reward in the GUI. If `ITEM` type, this does not affect the item given to/taken from the player.
+```json
+"display": {
+  "item": "minecraft:diamond",
+  "name": "<aqua>Diamond",
+  "lore": [
+    "<gray>This is a special diamond!"
+  ]
+}
+```
+### Slots
+> Aliases: `slot`
+
+A list of slots that this item will be inserted into. This value should be between `0` and the max slots in the GUI type used. If empty, an available open slot will automatically be found. If no slot is found, the item will not be included. Defaults to an empty list if not provided.
+:::tip
+Some options are flexible-lists, meaning you can either set it to a specific value or define a list!
+> `"slots": 1`<br></br>
+> `"slots": [1, 2, 3]`
+:::
+```json
+"slots": [0, 1, 7, 8]
+```
+### Pages
+> Aliases: `page`
+
+A list of pages that this item will be placed into at the slot specified. The first page is 1. Defaults to `[1]` if not provided.
+:::tip
+Some options are flexible-lists, meaning you can either set it to a specific value or define a list!
+> `"pages": 1`<br></br>
+> `"pages": [1, 2, 3]`
+:::
+```json
+"pages": [1, 2]
+```
+### Buy
+Options for buying this item. If not defined, this entry cannot be bought.
+```json
+"buy": {
+  "price": 1,
+  "economy": "IMPACTOR",
+  "currency": "impactor:dollars",
+  "name": "Dollars",
+  "max_amount": 128,
+  "requirements": {}
+}
+```
+<LinkCard
+    title="Price Configuration"
+    href="/skiesshop/shops/price_configuration/"
+    description="Options to configure a shop entry's buy/sell price"
+/>
+
+### Sell
+Options for selling this item. If not defined, this entry cannot be bought. Some types may not support this option.
+```json
+"sell": {
+  "price": 1,
+  "economy": "IMPACTOR",
+  "currency": "impactor:dollars",
+  "name": "Dollars",
+  "max_amount": 128,
+  "requirements": {}
+}
+```
+<LinkCard
+    title="Price Configuration"
+    href="/skiesshop/shops/price_configuration/"
+    description="Options to configure a shop entry's buy/sell price"
+/>

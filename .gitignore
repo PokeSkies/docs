@@ -2,8 +2,8 @@
 dist/
 # generated types
 .astro/
-
 .idea/
+.starlight-icons/
 
 # dependencies
 node_modules/

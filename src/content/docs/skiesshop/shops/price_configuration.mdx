@@ -1,0 +1,89 @@
+---
+title: Price Configuration
+description: Options to configure a shop entry's buy/sell price
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+```json
+"buy": {
+  "price": 1,
+  "economy": "IMPACTOR",
+  "currency": "impactor:dollars",
+  "name": "Dollars",
+  "max_amount": 128,
+  "requirements": {
+    "requirements": {},
+    "deny_actions": {},
+    "success_actions": {},
+    "minimum_requirements": 1,
+    "stop_at_success": true,
+    "send_denial_message": true
+  }
+},
+"sell": {
+  "price": 1,
+  "economy": "IMPACTOR",
+  "currency": "impactor:dollars",
+  "name": "Dollars",
+  "max_amount": 128,
+  "requirements": {
+    "requirements": {},
+    "deny_actions": {},
+    "success_actions": {},
+    "minimum_requirements": 1,
+    "stop_at_success": true,
+    "send_denial_message": true
+  }
+}
+```
+
+## Price Options
+### Price (required)
+The price to buy/sell this entry for. Any number 0 and below is considered free. The total price for a purchase is this value multiplied by the amount purchased.
+```json
+"type": "ITEM"
+```
+### Economy
+The economy integration to use for this transaction. A list of supported economies can be found in [Economies](/skiesshop/getting_started/economies/).
+```json
+"economy": "IMPACTOR"
+```
+<LinkCard
+    title="Economies"
+    href="/skiesshop/getting_started/economies/"
+    description="Supported Economy mods for the SkiesShop mod"
+/>
+
+### Currency
+The currency to use for this transaction. Not supported for some Economy mods.
+```json
+"currency": "impactor:dollars"
+```
+### Name
+The name of the currency for the placeholders `%buy_price_currency%` and `%sell_price_currency%`.
+```json
+"name": "Dollars"
+```
+### Max Amount
+The maximum amount of items that can be bought/sold in one transaction. Any number 0 and below is considered unlimited.
+```json
+"max_amount": 128
+```
+### Requirements
+Requirements that must be met in order for the player to buy/sell this entry. See [Requirements](/skiesshop/shops/requirements/) for more information.
+```json
+"requirements": {
+  "requirements": {},
+  "deny_actions": {},
+  "success_actions": {},
+  "minimum_requirements": 1,
+  "stop_at_success": true,
+  "send_denial_message": true
+}
+```
+<LinkCard
+    title="Requirements"
+    href="/skiesshop/shops/price_configuration/"
+    description="Guide to configure requirements for shop entries"
+/>

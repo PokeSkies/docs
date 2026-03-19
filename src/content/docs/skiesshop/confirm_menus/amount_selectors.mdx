@@ -1,0 +1,90 @@
+---
+title: Amount Selectors
+description: Guide to configure Amount Selectors for the SkiesShop mod
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+Confirm Menus contain Amount Selectors, which will purchase/sell the amount configured of the currently selected shop entry. Multiple Amount Selectors can be configured for each Confirm Menu, allowing the player to choose from different preset amounts to buy/sell. An Amount Selector will not be displayed if the `"max_amount"` option has been set lower than the Amount Selector's amount. The item definition is the same as other items, see [Item Options](/skieshop/items/item_options/) for more information.
+```json
+"amounts": {
+  "1": {
+    "item": "minecraft:lime_stained_glass",
+    "amount": 1,
+    "slot": 9,
+    "type": "BUY",
+    "name": "<green>Buy 1",
+    "lore": [
+      "<gray>Click to purchase"
+    ]
+  }
+}
+```
+<LinkCard
+    title="Item Configuration"
+    href="/skiesshop/items/item_options/"
+    description="Options to configure a generic item's appearance and data"
+/>
+
+## Amount Selector Options
+### Item (required)
+The item used to represent this amount option in the GUI.
+```json
+"item": "minecraft:lime_stained_glass"
+```
+### Amount (required)
+The amount that this option will buy/sell when clicked.
+```json
+"amount": 1
+```
+### Slot (required)
+The slot that this amount option will be displayed in.
+```json
+"slot": 9
+```
+### Type (required)
+Whether this amount option is for buying or selling. Must be either `BUY` or `SELL`.
+```json
+"type": "BUY"
+```
+### Name
+The name to override the item with. Defaults to the item's normal name if not provided. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"name": "<red>Example Stone"
+```
+### Lore
+A list of lore to override the item with. Defaults to an empty list if not provided. Uses <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"lore": [
+  "<gray>Example Line 1",
+  "<gray>Example Line 2"
+]
+```
+### Custom Model Data
+An number representing the Custom Model Data of the item. This is a quick option for the `"minecraft:custom_model_data"` component, added for ease of use. Not applied if not provided.
+```json
+"custom_model_data": 123456
+```
+### Components (nbt)
+> Aliases: `nbt`
+
+A list of components that are set onto the item. This follows the same formatting as applying components to an item via `/give`. No additional components are applied if not provided.
+:::note
+Components are the new way of defining item NBT in Minecraft. They replaced the older NBT format in versions 1.20.5+. For more information on components, see the <a href="https://minecraft.wiki/w/Data_component_format" target="_blank" rel="noopener noreferrer">Minecraft Wiki on Data Components</a>.
+:::
+```json
+"components": {
+  "minecraft:enchantments": {
+    "levels": {
+    "minecraft:unbreaking": 3
+    },
+    "show_in_tooltip": false
+  },
+  "minecraft:hide_additional_tooltip": {}
+}
+```
+<LinkCard
+    title="Components"
+    href="/skiesshop/items/components/"
+    description="Guide to configuring item components (nbt)"
+/>
