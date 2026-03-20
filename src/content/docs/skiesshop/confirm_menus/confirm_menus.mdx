@@ -55,6 +55,51 @@ Whether to automatically go back to the Shop menu after a successful transaction
 ```json
 "back_on_transaction": true
 ```
+
+## Open Actions
+A list of Actions that are executed when the Shop GUI is opened. Importantly, Open Actions are only executed when opening the Shop, not from something like a `BACK` action behavior. See [Actions](/skiesshop/shops/actions/) for more information on actions.
+```json
+"open_actions": {
+  "action_1": {
+    "type": "COMMAND_CONSOLE",
+    "click": "ANY",
+    "commands": ["give %player% diamond 1"]
+  },
+  "action_2": {
+    "type": "MESSAGE",
+    "click": "ANY",
+    "message": ["<blue>Thanks for opening my menu!"]
+  }
+}
+```
+<LinkCard
+    title="Actions"
+    href="/skiesshop/shops/actions/"
+    description="Guide to configuring actions"
+/>
+
+## Close Actions
+A list of Actions that are executed when the Shop GUI is closed. Importantly, Close Actions do not execute when opening a Confirm Menu. See [Actions](/skiesshop/shops/actions/) for more information on actions.
+```json
+"open_actions": {
+  "action_1": {
+    "type": "COMMAND_CONSOLE",
+    "click": "ANY",
+    "commands": ["give %player% diamond 1"]
+  },
+  "action_2": {
+    "type": "MESSAGE",
+    "click": "ANY",
+    "message": ["<blue>Thanks for opening my menu!"]
+  }
+}
+```
+<LinkCard
+    title="Actions"
+    href="/skiesshop/shops/actions/"
+    description="Guide to configuring actions"
+/>
+
 ## Amounts
 A MAP of amount options for the player to select when confirming their transaction. Each entry is a unique string identifier with a set of options for this amount selector.
 ```json
@@ -67,7 +112,13 @@ A MAP of amount options for the player to select when confirming their transacti
     "name": "<green>Buy 1",
     "lore": [
       "<gray>Click to purchase"
-    ]
+    ],
+    "sound": {
+      "id": "minecraft:ui.button.click",
+      "source": "MASTER",
+      "volume": 0.5,
+      "pitch": 0.1
+    }
   }
 }
 ```

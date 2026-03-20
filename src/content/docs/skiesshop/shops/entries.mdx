@@ -1,6 +1,6 @@
 ---
-title: Shop Entry
-description: Guide to configure Shops for the SkiesShop mod
+title: Shop Entries
+description: Guide to configure Shop Entries for the SkiesShop mod
 ---
 
 import { LinkCard } from '@astrojs/starlight/components';
@@ -21,7 +21,9 @@ import { LinkCard } from '@astrojs/starlight/components';
       "price": 1,
       "economy": "IMPACTOR",
       "currency": "impactor:dollars"
-    }
+    },
+    "entry_lore": [],
+    "click_options": {}
   },
   "command_example": {
     "type": "COMMAND",
@@ -115,4 +117,54 @@ Options for selling this item. If not defined, this entry cannot be bought. Some
     title="Price Configuration"
     href="/skiesshop/shops/price_configuration/"
     description="Options to configure a shop entry's buy/sell price"
+/>
+
+## Entry Lore (optional)
+:::note
+This is an optional setting that can be left undefined. If undefined, the Entry Lore will be pulled first from the Shop's Entry Lore, then the global `config.json`
+:::
+Override the lore for this specific Shop Entry. See [Entry Lore](/skieshop/config/entry_lore) for more information on Shop Entry Lore configuration.
+```json
+"entry_lore": [
+  "%display_item_lore%",
+  "",
+  "<green><b>Buy Price:</b> <white>%buy_price% %buy_price_currency%",
+  "<red><b>Sell Price:</b> <white>%sell_price% %sell_price_currency%",
+  "",
+  "<red>Left-Click to buy this item",
+  "<red>Right-Click to sell this item"
+]
+```
+<LinkCard
+    title="Entry Lore"
+    href="/skiesshop/config/entry_lore/"
+    description="Configuration guide for the lore of shop entries"
+/>
+
+## Click Options (optional)
+:::note
+This is an optional setting that can be left undefined. If undefined, the Click Options will be pulled first from the Shop's Click Options, then the global `config.json`
+:::
+Override the click behavior of this specific Shop Entry. See [Click Options](/skieshop/config/click_options) for more information on Shop Click Options configuration.
+```json
+"click_options": {
+  "ANY_CLICK": {
+    "type": "OPEN_CONFIRM_MENU",
+    "sound": {
+      "id": "minecraft:ui.button.click",
+      "source": "MASTER",
+      "volume": 0.5,
+      "pitch": 1.0
+    },
+    "transactions": [
+      "buy"
+    ],
+    "menu": "example_buy"
+  }
+}
+```
+<LinkCard
+    title="Click Options"
+    href="/skiesshop/config/click_options/"
+    description="Configuration guide for Click Option behaviors"
 />

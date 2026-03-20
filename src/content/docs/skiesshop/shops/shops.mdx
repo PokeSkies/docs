@@ -20,6 +20,10 @@ Every Shop has a large set of configuration options to customize the Shop!
 {
   "title": "Example Shop",
   "type": "GENERIC_9x6",
+  "entry_lore": {},
+  "click_options": {},
+  "open_actions": {},
+  "close_actions": {},
   "entries": {},
   "items": {}
 }
@@ -30,6 +34,126 @@ The title of the GUI for the shop. Uses <a href="https://docs.advntr.dev/minimes
 ```json
 "title": "<red>Example Shop"
 ```
+## Type
+The type of inventory menu to use.
+```json
+"type": "GENERIC_9X3"
+```
+<LinkCard
+    title="GUI Types"
+    href="/skiesshop/getting_started/gui_types/"
+    description="List of available GUI types"
+/>
+
+## Entry Lore (optional)
+:::note
+This is an optional setting that can be left undefined. If undefined, the Entry Lore will be pulled from the global `config.json`
+:::
+Override the lore lines added to this Shop's Entries. See [Entry Lore](/skieshop/config/entry_lore) for more information on Shop Entry Lore configuration.
+```json
+"entry_lore": {
+  "buy": [
+    "%display_item_lore%",
+    "",
+    "<green><b>Buy Price:</b> <white>%buy_price% %buy_price_currency%",
+    "",
+    "<red>Left-Click to buy this item"
+  ],
+  "sell": [
+    "%display_item_lore%",
+    "",
+    "<red><b>Sell Price:</b> <white>%sell_price% %sell_price_currency%",
+    "",
+    "<red>Right-Click to sell this item"
+  ],
+  "buy_sell": [
+    "%display_item_lore%",
+    "",
+    "<green><b>Buy Price:</b> <white>%buy_price% %buy_price_currency%",
+    "<red><b>Sell Price:</b> <white>%sell_price% %sell_price_currency%",
+    "",
+    "<red>Left-Click to buy this item",
+    "<red>Right-Click to sell this item"
+  ]
+}
+```
+<LinkCard
+    title="Entry Lore"
+    href="/skiesshop/config/entry_lore/"
+    description="Configuration guide for the lore of shop entries"
+/>
+
+## Click Options (optional)
+:::note
+This is an optional setting that can be left undefined. If undefined, the Click Options will be pulled from the global `config.json`
+:::
+Override the click behavior of all shop entries in this Shop. See [Click Options](/skieshop/config/click_options) for more information on Shop Click Options configuration.
+```json
+"click_options": {
+  "ANY_CLICK": {
+    "type": "OPEN_CONFIRM_MENU",
+    "sound": {
+      "id": "minecraft:ui.button.click",
+      "source": "MASTER",
+      "volume": 0.5,
+      "pitch": 1.0
+    },
+    "transactions": [
+      "buy"
+    ],
+    "menu": "example_buy"
+  }
+}
+```
+<LinkCard
+    title="Click Options"
+    href="/skiesshop/config/click_options/"
+    description="Configuration guide for Click Option behaviors"
+/>
+
+## Open Actions
+A list of Actions that are executed when the Shop GUI is opened. Importantly, Open Actions are only executed when opening the Shop, not from something like a `BACK` action behavior. See [Actions](/skiesshop/shops/actions/) for more information on actions.
+```json
+"open_actions": {
+  "action_1": {
+    "type": "COMMAND_CONSOLE",
+    "click": "ANY",
+    "commands": ["give %player% diamond 1"]
+  },
+  "action_2": {
+    "type": "MESSAGE",
+    "click": "ANY",
+    "message": ["<blue>Thanks for opening my menu!"]
+  }
+}
+```
+<LinkCard
+    title="Actions"
+    href="/skiesshop/shops/actions/"
+    description="Guide to configuring actions"
+/>
+
+## Close Actions
+A list of Actions that are executed when the Shop GUI is closed. Importantly, Close Actions do not execute when opening a Confirm Menu. See [Actions](/skiesshop/shops/actions/) for more information on actions.
+```json
+"open_actions": {
+  "action_1": {
+    "type": "COMMAND_CONSOLE",
+    "click": "ANY",
+    "commands": ["give %player% diamond 1"]
+  },
+  "action_2": {
+    "type": "MESSAGE",
+    "click": "ANY",
+    "message": ["<blue>Thanks for opening my menu!"]
+  }
+}
+```
+<LinkCard
+    title="Actions"
+    href="/skiesshop/shops/actions/"
+    description="Guide to configuring actions"
+/>
 
 ## Entries
 A list of Shop entries that can appear inside a shop for the player. Each entry in the list is a MAP (key, value pair) entry of ID with a Shop Entry defined. There are multiple types of Shop Entries, each type has some shared and unique settings.

@@ -16,7 +16,13 @@ Confirm Menus contain Amount Selectors, which will purchase/sell the amount conf
     "name": "<green>Buy 1",
     "lore": [
       "<gray>Click to purchase"
-    ]
+    ],
+    "sound": {
+      "id": "minecraft:ui.button.click",
+      "source": "MASTER",
+      "volume": 0.5,
+      "pitch": 0.1
+    }
   }
 }
 ```
@@ -88,3 +94,14 @@ Components are the new way of defining item NBT in Minecraft. They replaced the 
     href="/skiesshop/items/components/"
     description="Guide to configuring item components (nbt)"
 />
+
+### Sound
+The sound that will play when this amount option is clicked and the transaction is successful.
+```json
+"sound": {
+  "id": "minecraft:ui.button.click",
+  "source": "MASTER",
+  "volume": 0.5,
+  "pitch": 0.1
+}
+```

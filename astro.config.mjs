@@ -204,8 +204,9 @@ export default defineConfig({
                                     label: "Shops",
                                     items: [
                                         'skiesshop/shops/shops',
-                                        'skiesshop/shops/entry',
+                                        'skiesshop/shops/entries',
                                         'skiesshop/shops/price_configuration',
+                                        'skiesshop/shops/actions',
                                         'skiesshop/shops/requirements',
                                         'skiesshop/shops/presets'
                                     ]
@@ -221,8 +222,7 @@ export default defineConfig({
                                     label: "Items",
                                     items: [
                                         'skiesshop/items/item_options',
-                                        'skiesshop/items/components',
-                                        'skiesshop/items/actions'
+                                        'skiesshop/items/components'
                                     ]
                                 }
                             ]) ,
