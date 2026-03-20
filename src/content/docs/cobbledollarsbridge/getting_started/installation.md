@@ -26,4 +26,4 @@ CobbleDollars Bridge requires the following to run (as of January 2026):
 3. Download all required dependencies for the mod (See [Server Requirements](#server-requirements) above)]
 4. Restart the server to generate the configuration files and folders.
 5. Modify and access your balance using Impactor's `/eco` commands
-6. Configure mod options in the `config.json` file inside the `config/cobbledollarsbridge/` folder. See the [Mod Configuration](/cobbledollarsbridge/config/) guide for more information.
+6. Configure mod options in the `config.json` file inside the `config/cobbledollarsbridge/` folder. See the [Mod Configuration](/cobbledollarsbridge/config/config/) guide for more information.
