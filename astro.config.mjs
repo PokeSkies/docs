@@ -263,6 +263,28 @@ export default defineConfig({
                             ]),
                         },
                         {
+                            label: 'Cobblemon XP Lock',
+                            link: '/cobblemonxplock/getting_started/introduction',
+                            icon: 'i-mdi:lock-outline',
+                            items: defineSidebar([
+                                {
+                                    label: "Getting Started",
+                                    items: [
+                                        'cobblemonxplock/getting_started/introduction',
+                                        'cobblemonxplock/getting_started/installation',
+                                        'cobblemonxplock/getting_started/commands_permissions'
+                                    ]
+                                },
+                                {
+                                    label: "Main Config",
+                                    items: [
+                                        'cobblemonxplock/config/config',
+                                        'cobblemonxplock/config/messages'
+                                    ]
+                                },
+                            ]),
+                        },
+                        {
                             label: 'CobbleDollars Bridge',
                             link: '/cobbledollarsbridge/getting_started/introduction',
                             icon: 'i-mdi:bridge',

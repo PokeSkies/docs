@@ -1,0 +1,35 @@
+---
+title: Messages
+description: Configuration options for Messages in the Cobblemon XP Lock mod
+---
+
+There are several customizable messages in the `config.json` file that are sent to the player when performing certain actions with the mod. Each message supports [MiniMessage formatting](https://docs.advntr.dev/minimessage/format.html)!
+```json
+"messages": {
+  "invalid_slot": "<red>The slot %slot% is invalid! Please choose a slot between 1 and 6.",
+  "empty_slot": "<red>The slot %slot% is empty! Please enter a party slot that contains a Pokemon.",
+  "locked_xp": "<red>Locked experience for %pokemon% in slot %slot%!",
+  "unlocked_xp": "<green>Unlocked experience for %pokemon% in slot %slot%!"
+}
+```
+
+## Invalid Slot
+Message sent to the player when they enter an invalid slot number (not between 1 and 6) in the `/xplock` command.
+```json
+"invalid_slot": "<red>The slot %slot% is invalid! Please choose a slot between 1 and 6."
+```
+## Empty Slot
+Message sent to the player when they enter a slot number that does not contain a Pokemon in their party in the `/xplock` command.
+```json
+"empty_slot": "<red>The slot %slot% is empty! Please enter a party slot that contains a Pokemon."
+```
+## Locked XP
+Message sent to the player when they successfully lock XP gain for a Pokemon in their party. The message supports the placeholders `%pokemon%` for the Pokemon's name and `%slot%` for the party slot number.
+```json
+"locked_xp": "<red>Locked experience for %pokemon% in slot %slot%!"
+```
+## Unlocked XP
+Message sent to the player when they successfully unlock XP gain for a Pokemon in their party. The message supports the placeholders `%pokemon%` for the Pokemon's name and `%slot%` for the party slot number.
+```json
+"unlocked_xp": "<green>Unlocked experience for %pokemon% in slot %slot%!"
+```

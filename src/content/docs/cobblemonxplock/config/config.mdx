@@ -1,0 +1,49 @@
+---
+title: Mod Configuration
+description: Guide to configure the Main Config for the Cobblemon XP Lock mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Code } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import defaultConfig from './default_config.json?raw';
+
+The guide explains configuring the main `config.json` file for Cobblemon XP Lock. The main configuration file contains global settings that affect the entire mod.
+
+<FileTree>
+- config
+    - cobblemonxplock
+        - config.json
+</FileTree>
+
+***
+## Example File
+<Code code={defaultConfig} lang="json" title="config.json" />
+
+## Options
+***
+### Debug
+Whether to enable debug mode for the mod. Debug mode will print additional information to the console, which can be useful for troubleshooting issues with the mod. Default value is `false`.
+```json
+"debug": false
+```
+### Id
+The unique identifier used to apply lock data to a Pokemon.You can use any string as an identifier, but leaving this as the default value is recommended. This is a useful config option for backwards compatibility with older locking mods!
+```json
+"id": "XPLock"
+```
+### Messages
+A set of customizable messages that are sent to the player when performing certain actions with the mod. Each message supports <a href="https://docs.advntr.dev/minimessage/format.html" target="_blank" rel="noopener noreferrer">MiniMessage formatting</a>!
+```json
+"messages": {
+  "invalid_slot": "<red>The slot %slot% is invalid! Please choose a slot between 1 and 6.",
+  "empty_slot": "<red>The slot %slot% is empty! Please enter a party slot that contains a Pokemon.",
+  "locked_xp": "<red>Locked experience for %pokemon% in slot %slot%!",
+  "unlocked_xp": "<green>Unlocked experience for %pokemon% in slot %slot%!"
+}
+```
+<LinkCard
+    title="Messages"
+    href="/cobblemonxplock/config/messages/"
+    description="Configuration options for Messages"
+/>

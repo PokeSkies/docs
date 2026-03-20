@@ -1,0 +1,10 @@
+{
+  "debug": false,
+  "id": "XPLock",
+  "messages": {
+    "invalid_slot": "<red>The slot %slot% is invalid! Please choose a slot between 1 and 6.",
+    "empty_slot": "<red>The slot %slot% is empty! Please enter a party slot that contains a Pokemon.",
+    "locked_xp": "<red>Locked experience for %pokemon% in slot %slot%!",
+    "unlocked_xp": "<green>Unlocked experience for %pokemon% in slot %slot%!"
+  }
+}
