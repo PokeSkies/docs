@@ -3,6 +3,8 @@ title: Items
 description: Guide to configure items for the SkiesGUIs mod
 ---
 
+import { LinkCard } from '@astrojs/starlight/components';
+
 Items are the main contents of a GUI and the available options for items define how they should behave when players view or interact with them.
 ***
 ## Creating Items
@@ -34,7 +36,7 @@ An item resource location (combination of `mod_id:item_id`). This can be any ite
 A list of slots that this item will be inserted into. This value should be between `0` and the (`size` * 9) - 1. EX: if `"size: 3"`, then between `0` and `26`. Defaults to an empty list if not provided.
 :::tip
 Some options are flexible-lists, meaning you can either set it to a specific value or define a list!
-> `"slots": 1`<br>
+> `"slots": 1`<br></br>
 > `"slots": [1, 2, 3]`
 :::
 ```json
@@ -81,6 +83,12 @@ Components are the new way of defining item NBT in Minecraft. They replaced the 
   "minecraft:hide_additional_tooltip": {}
 }
 ```
+<LinkCard
+    title="Components"
+    href="/skiesguis/guis/components/"
+    description="Guide to configuring item components (nbt)"
+/>
+
 ### Priority
 The priority of this item to the defined slots compared to other items. The closer to 0, the higher the priority. Useful in combination with [View Requirements](#view-requirements) to display different items using conditionals. Defaults to 0 if not provided.
 ```json
@@ -110,6 +118,12 @@ Define when an item is allowed to be displayed using conditionals. All listed re
   }
 },
 ```
+<LinkCard
+    title="Requirements"
+    href="/skiesguis/guis/requirements/"
+    description="Guide to configuring requirements"
+/>
+
 ### Click Actions
 A list of Actions that are executed when the item is clicked on. The [Click Type](/skiesguis/gui_config/actions/#click-types) must be correct and any [Click Requirements](#click-requirements) defined must succeed before the actions are executed. See [Actions](/skiesguis/gui_config/actions/) for more information.
 ```json
@@ -126,6 +140,12 @@ A list of Actions that are executed when the item is clicked on. The [Click Type
   }
 }
 ```
+<LinkCard
+    title="Actions"
+    href="/skiesguis/guis/actions/"
+    description="Guide to configuring actions"
+/>
+
 ### Click Requirements
 Define when an item's actions are allowed to be executed when clicked on using conditionals. All listed requirements must be met in order for any actions to be ran or checked. Optionally, [Actions](/skiesguis/gui_config/actions/) can be defined to execute when the requirements have failed or succeeded. See [Requirements](/skiesguis/gui_config/requirements/) for more information on requirements.
 ```json
@@ -150,6 +170,11 @@ Define when an item's actions are allowed to be executed when clicked on using c
   }
 },
 ```
+<LinkCard
+    title="Requirements"
+    href="/skiesguis/guis/requirements/"
+    description="Guide to configuring requirements"
+/>
 
 ## Supported Items
 The `"item": ""` option supports a variety of inputs, either default `mod_id:item_id` identifiers or special keywords for specific item types. All inputs are parsed against any Placeholder Services.

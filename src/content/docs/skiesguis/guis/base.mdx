@@ -4,6 +4,7 @@ description: Guide to configure GUIs for the SkiesGUIs mod
 ---
 
 import { FileTree } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
 
 Each GUI configuration is stored in its own JSON file within the `guis` folder inside the main `/config/skiesguis/` folder.
 <FileTree>
@@ -71,6 +72,12 @@ A list of Actions that are executed when the GUI is opened. Any [Open Requiremen
   }
 }
 ```
+<LinkCard
+    title="Actions"
+    href="/skiesguis/guis/actions/"
+    description="Guide to configuring actions"
+/>
+
 ### Close Actions
 A list of Actions that are executed when the GUI is closed. Each action can have [Requirements](/skiesguis/gui_config/requirements/) defined that must also succeed before each actions is executed. See [Actions](/skiesguis/gui_config/actions/) for more information.
 ```json
@@ -87,6 +94,12 @@ A list of Actions that are executed when the GUI is closed. Each action can have
   }
 }
 ```
+<LinkCard
+    title="Actions"
+    href="/skiesguis/guis/actions/"
+    description="Guide to configuring actions"
+/>
+
 ### Open Requirements
 Define requirements that must be met before a GUI can be opened. Optionally, [Actions](/skiesguis/gui_config/actions/) can be defined to execute when the requirements have failed or succeeded. See [Requirements](/skiesguis/gui_config/requirements/) for more information on requirements.
 ```json
@@ -111,7 +124,11 @@ Define requirements that must be met before a GUI can be opened. Optionally, [Ac
   }
 },
 ```
-
+<LinkCard
+    title="Requirements"
+    href="/skiesguis/guis/requirements/"
+    description="Guide to configuring requirements"
+/>
 
 
 
