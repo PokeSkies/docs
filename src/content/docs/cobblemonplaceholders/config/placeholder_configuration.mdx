@@ -1,0 +1,277 @@
+---
+title: Placeholder Configuration
+description: Configuration options for placeholders in the Cobblemon Placeholders mod
+---
+
+Many placeholders support customizing their general behaviors and responses. Options are organized by the type of placeholder they apply to and then potentially under the specific placeholder.
+```json
+"placeholders": {
+  "party": {},
+  "species": {},
+  "pokedex": {},
+  "misc": {}
+}
+```
+
+<br/><br/><hr/>
+
+## Party
+```json
+"party": {
+  "invalid_slot": "Invalid party slot argument (1-6)!",
+  "empty_slot": "Empty Slot",
+  "aspects": {
+    "invalid_slot": "Invalid aspect slot argument (1+)!",
+    "empty_list": "No Aspects",
+    "empty_slot": "Empty Aspect"
+  },
+  "aspects_has": {
+    "invalid_aspect": "Invalid aspect argument!"
+  },
+  "moveset": {
+    "invalid_slot": "Invalid move slot argument (1-4)!",
+    "empty_list": "No Moves",
+    "empty_slot": "Empty Move"
+  },
+  "ivs_percent": {
+    "fraction_min": 0,
+    "fraction_max": 0
+  },
+  "evs_percent": {
+    "fraction_min": 0,
+    "fraction_max": 0
+  },
+  "nickname": {
+    "species_if_empty": true
+  },
+  "ot_uuid": {
+    "none": "Unknown"
+  },
+  "ot_name": {
+    "none": "Unknown"
+  },
+  "property_get": {
+    "invalid_key": "No Value"
+  },
+  "property_has": {
+    "invalid_property": "Invalid Property"
+  }
+}
+```
+### Invalid Slot
+Message returned when an invalid party slot number is provided as an argument! Party slot numbers must be between 1 and 6 (inclusive).
+```json
+"invalid_slot": "Invalid party slot argument (1-6)!"
+```
+### Empty Slot
+Message returned when a party slot is empty.
+```json
+"empty_slot": "Empty Slot"
+```
+### Aspects
+#### Invalid Aspect
+Message returned when an invalid aspect slot number is provided as an argument! Aspect slot numbers must be 1 or higher.
+```json
+"invalid_slot": "Invalid aspect slot argument (1+)!"
+```
+#### Empty List
+Message returned when a Pokemon has no aspects.
+```json
+"empty_list": "No Aspects"
+```
+#### Empty Slot
+Message returned when an aspect slot is empty.
+```json
+"empty_slot": "Empty Aspect"
+```
+### Aspects Has
+#### Invalid Aspect
+Message returned when an invalid aspect name is provided as an argument.
+```json
+"invalid_aspect": "Invalid aspect argument!"
+```
+### Moveset
+#### Invalid Slot
+Message returned when an invalid move slot number is provided as an argument! Move slot numbers must be between 1 and 4 (inclusive).
+```json
+"invalid_slot": "Invalid move slot argument (1-4)!"
+```
+#### Empty List
+Message returned when a Pokemon has no moves.
+```json
+"empty_list": "No Moves"
+```
+#### Empty Slot
+Message returned when a move slot is empty.
+```json
+"empty_slot": "Empty Move"
+```
+### IVs Percent
+#### Fraction Min
+The minimum digits that are returned in the ivs_percent placeholder. This can be used to ensure that a certain number of decimal places are always returned, even if they are zeros.
+```json
+"fraction_min": 0
+```
+#### Fraction Max
+The maximum digits that are returned in the ivs_percent placeholder. This can be used to limit the number of decimal places that are returned.
+```json
+"fraction_max": 0
+```
+### EVs Percent
+#### Fraction Min
+The minimum digits that are returned in the evs_percent placeholder. This can be used to ensure that a certain number of decimal places are always returned, even if they are zeros.
+```json
+"fraction_min": 0
+```
+#### Fraction Max
+The maximum digits that are returned in the evs_percent placeholder. This can be used to limit the number of decimal places that are returned.
+```json
+"fraction_max": 0
+```
+### Nickname
+#### Species If Empty
+Whether the Pokemon's species name should be returned if the Pokemon does not have a nickname. If set to `false`, an empty string will be returned if the Pokemon does not have a nickname.
+```json
+"species_if_empty": true
+```
+### OT UUID
+#### None
+The message returned when the Pokemon does not have an Original Trainer.
+```json
+"none": "Unknown"
+```
+### OT Name
+#### None
+The message returned when the Pokemon does not have an Original Trainer.
+```json
+"none": "Unknown"
+```
+### Property Get
+#### Invalid Key
+The message returned when an invalid property key is provided as an argument.
+```json
+"invalid_key": "No Value"
+```
+### Property Has
+#### Invalid Property
+The message returned when an invalid property name is provided as an argument.
+```json
+"invalid_property": "Invalid Property"
+```
+
+<br/><br/><hr/>
+
+## Species
+```json
+"species": {
+  "invalid_species": "Provide a valid species argument!",
+  "abilities": {
+    "invalid_slot": "Invalid ability slot argument (1-2,H)!",
+    "empty_slot": "Empty Ability"
+  },
+  "egggroups": {
+    "empty_list": "No Egg Groups"
+  },
+  "types": {
+    "invalid_slot": "Invalid type slot argument (1-2)!",
+    "empty_slot": "No Type"
+  }
+}
+```
+### Invalid Species
+Message returned when an invalid species name is provided as an argument.
+```json
+"invalid_species": "Provide a valid species argument!"
+```
+### Abilities
+#### Invalid Slot
+Message returned when an invalid ability slot is provided as an argument! Ability slots must be 1, 2, or H.
+```json
+"invalid_slot": "Invalid ability slot argument (1-2,H)!"
+```
+#### Empty Slot
+Message returned when an ability slot is empty.
+```json
+"empty_slot": "Empty Ability"
+```
+### Egg Groups
+#### Empty List
+Message returned when a species has no egg groups.
+```json
+"empty_list": "No Egg Groups"
+```
+### Types
+#### Invalid Slot
+Message returned when an invalid type slot is provided as an argument! Type slots must be 1 or 2.
+```json
+"invalid_slot": "Invalid type slot argument (1-2)!"
+```
+#### Empty Slot
+Message returned when a type slot is empty.
+```json
+"empty_slot": "No Type"
+```
+
+<br/><br/><hr/>
+
+## PokeDex
+```json
+"pokedex": {
+  "include_unimplemented": false,
+  "dex_seen_percent": {
+    "fraction_min": 0,
+    "fraction_max": 0
+  },
+  "dex_caught_percent": {
+    "fraction_min": 0,
+    "fraction_max": 0
+  },
+  "invalid_species": "Provide a valid species argument!"
+}
+```
+### Include Unimplemented
+Whether unimplemented species should be included in the pokedex-related placeholder calculations. This can change the results of percent related placeholders, which rely on knowing the total number of species available. A species is unimplemented if it does not have the `"implemented"` option marked as true in it's species file (this is a Cobblemon thing). `true` will include unimplemented species, while `false` will not include them.
+```json
+"include_unimplemented": false
+```
+### Dex Seen Percent
+#### Fraction Min
+The minimum digits that are returned in the pokedex seen percent placeholder. This can be used to ensure that a certain number of decimal places are always returned, even if they are zeros.
+```json
+"fraction_min": 0
+```
+#### Fraction Max
+The maximum digits that are returned in the pokedex seen percent placeholder. This can be used to limit the number of decimal places that are returned.
+```json
+"fraction_max": 0
+```
+### Dex Caught Percent
+#### Fraction Min
+The minimum digits that are returned in the pokedex caught percent placeholder. This can be used to ensure that a certain number of decimal places are always returned, even if they are zeros.
+```json
+"fraction_min": 0
+```
+#### Fraction Max
+The maximum digits that are returned in the pokedex caught percent placeholder. This can be used to limit the number of decimal places that are returned.
+```json
+"fraction_max": 0
+```
+### Invalid Species
+Message returned when an invalid species name is provided as an argument in a pokedex-related placeholder
+```json
+"invalid_species": "Provide a valid species argument!"
+```
+
+<br/><br/><hr/>
+
+## Misc
+```json
+"misc": {
+  "invalid_molang": "Invalid Molang expression!"
+}
+```
+### Invalid Molang
+Message returned when an invalid Molang expression is provided as an argument.
+```json
+"invalid_molang": "Invalid Molang expression!"
+```

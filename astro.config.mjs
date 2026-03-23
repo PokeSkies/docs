@@ -228,7 +228,31 @@ export default defineConfig({
                             ]) ,
                         },
                         {
-                            label: 'ActionItems',
+                            label: 'Cobblemon Placeholders',
+                            link: '/cobblemonplaceholders/getting_started/introduction',
+                            icon: 'i-mdi:puzzle-outline',
+                            items: defineSidebar([
+                                {
+                                    label: "Getting Started",
+                                    items: [
+                                        'cobblemonplaceholders/getting_started/introduction',
+                                        'cobblemonplaceholders/getting_started/installation',
+                                        'cobblemonplaceholders/getting_started/commands_permissions',
+                                        'cobblemonplaceholders/getting_started/placeholders',
+                                        'cobblemonplaceholders/getting_started/unsafe_placeholders'
+                                    ]
+                                },
+                                {
+                                    label: "Main Config",
+                                    items: [
+                                        'cobblemonplaceholders/config/config',
+                                        'cobblemonplaceholders/config/placeholder_configuration'
+                                    ]
+                                }
+                            ]),
+                        },
+                        {
+                            label: 'Action Items',
                             link: '/actionitems/getting_started/introduction',
                             icon: 'i-mdi:diamond-outline',
                             items: defineSidebar([

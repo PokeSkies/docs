@@ -1,0 +1,58 @@
+---
+title: Mod Configuration
+description: Guide to configure the Main Config for the Cobblemon Placeholders mod
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Code } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import defaultConfig from './default_config.json?raw';
+
+The guide explains configuring the main `config.json` file for Cobblemon Placeholders. The main configuration file contains global settings that affect the entire mod.
+
+<FileTree>
+- config
+    - cobblemonplaceholders
+        - config.json
+</FileTree>
+
+***
+## Example File
+<Code code={defaultConfig} lang="json" title="config.json" />
+
+## Options
+***
+### Debug
+Whether to enable debug mode for the mod. Debug mode will print additional information to the console, which can be useful for troubleshooting issues with the mod. Default value is `false`.
+```json
+"debug": false
+```
+### Unsafe
+:::danger
+This feature (as the name implies) can be unsafe if used improperly. Only enable this if you know what you're doing and understand the potential risks.
+:::
+Enables unsafe placeholders that can cause security issues if used improperly. These placeholders can potentially expose sensitive information or allow for code execution if used in an unsafe way. Default value is `false`.
+```json
+"unsafe": false
+```
+<LinkCard
+    title="Unsafe Placeholders"
+    href="/cobblemonplaceholders/getting_started/unsafe_placeholders/"
+    description="Warnings and information about the potential risks of using unsafe placeholders"
+/>
+
+### Placeholder Configuration
+A set of options for configuring some placeholders that have customizable behavior. These options are categorized into different sections based on the type of placeholders available.
+```json
+"placeholders": {
+  "party": {},
+  "species": {},
+  "pokedex": {},
+  "misc": {}
+}
+```
+<LinkCard
+    title="Placeholders Configuration"
+    href="/cobblemonplaceholders/config/placeholder_configuration/"
+    description="Configuration options for customizable placeholders"
+/>

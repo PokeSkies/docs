@@ -1,0 +1,131 @@
+---
+title: Placeholders
+description: List of the available placeholders in the Cobblemon Placeholders mod
+---
+
+## Player Placeholders
+These placeholders must provide a player in context to use them!
+### Party
+`[slot]` can be any number 1-6
+
+| MiniPlaceholders                                   | PlaceholderAPI                                     | Return Type       |
+|----------------------------------------------------|----------------------------------------------------|-------------------|
+| `<cobblemon_party_name:[slot]>`                    | `%cobblemon:party_name [slot]%`                    | string            |
+| `<cobblemon_party_species:[slot]>`                 | `%cobblemon:party_species [slot]%`                 | string            |
+| `<cobblemon_party_species_id:[slot]>`              | `%cobblemon:party_species_id [slot]%`              | resource location |
+| `<cobblemon_party_nickname:[slot]>`                | `%cobblemon:party_nickname [slot]%`                | string            |
+| `<cobblemon_party_form:[slot]>`                    | `%cobblemon:party_form [slot]%`                    | string            |
+| `<cobblemon_party_level:[slot]>`                   | `%cobblemon:party_level [slot]%`                   | int               |
+| `<cobblemon_party_exp:[slot]>`                     | `%cobblemon:party_exp [slot]%`                     | int               |
+| `<cobblemon_party_shiny:[slot]>`                   | `%cobblemon:party_shiny [slot]%`                   | boolean           |
+| `<cobblemon_party_helditem:[slot]>`                | `%cobblemon:party_helditem [slot]%`                | string            |
+| `<cobblemon_party_helditem_id:[slot]>`             | `%cobblemon:party_helditem_id [slot]%`             | resource location |
+| `<cobblemon_party_friendship:[slot]>`              | `%cobblemon:party_friendship [slot]%`              | int               |
+| `<cobblemon_party_ability:[slot]>`                 | `%cobblemon:party_ability [slot]%`                 | string            |
+| `<cobblemon_party_nature:[slot]>`                  | `%cobblemon:party_nature [slot]%`                  | string            |
+| `<cobblemon_party_gender:[slot]>`                  | `%cobblemon:party_gender [slot]%`                  | string            |
+| `<cobblemon_party_caughtball:[slot]>`              | `%cobblemon:party_caughtball [slot]%`              | string            |
+| `<cobblemon_party_caughtball_id:[slot]>`           | `%cobblemon:party_caughtball_id [slot]%`           | resource location |
+| `<cobblemon_party_dmax:[slot]>`                    | `%cobblemon:party_dmax [slot]%`                    | int               |
+| `<cobblemon_party_gmax:[slot]>`                    | `%cobblemon:party_gmax [slot]%`                    | boolean           |
+| `<cobblemon_party_teratype:[slot]>`                | `%cobblemon:party_teratype [slot]%`                | string            |
+| `<cobblemon_party_tradable:[slot]>`                | `%cobblemon:party_tradable [slot]%`                | boolean           |
+| `<cobblemon_party_moveset:[slot]>`                 | `%cobblemon:party_moveset [slot]%`                 | list of strings   |
+| `<cobblemon_party_moveset:[slot]:[1-4]>`           | `%cobblemon:party_moveset [slot]:[1-4]%`           | string            |
+| `<cobblemon_party_stats_hp:[slot]>`                | `%cobblemon:party_stats_hp [slot]%`                | int               |
+| `<cobblemon_party_stats_atk:[slot]>`               | `%cobblemon:party_stats_atk [slot]%`               | int               |
+| `<cobblemon_party_stats_def:[slot]>`               | `%cobblemon:party_stats_def [slot]%`               | int               |
+| `<cobblemon_party_stats_spa:[slot]>`               | `%cobblemon:party_stats_spa [slot]%`               | int               |
+| `<cobblemon_party_stats_spd:[slot]>`               | `%cobblemon:party_stats_spd [slot]%`               | int               |
+| `<cobblemon_party_stats_spe:[slot]>`               | `%cobblemon:party_stats_spe [slot]%`               | int               |
+| `<cobblemon_party_ivs_hp:[slot]>`                  | `%cobblemon:party_ivs_hp [slot]%`                  | int               |
+| `<cobblemon_party_ivs_atk:[slot]>`                 | `%cobblemon:party_ivs_atk [slot]%`                 | int               |
+| `<cobblemon_party_ivs_def:[slot]>`                 | `%cobblemon:party_ivs_def [slot]%`                 | int               |
+| `<cobblemon_party_ivs_spa:[slot]>`                 | `%cobblemon:party_ivs_spa [slot]%`                 | int               |
+| `<cobblemon_party_ivs_spd:[slot]>`                 | `%cobblemon:party_ivs_spd [slot]%`                 | int               |
+| `<cobblemon_party_ivs_spe:[slot]>`                 | `%cobblemon:party_ivs_spe [slot]%`                 | int               |
+| `<cobblemon_party_ivs_total:[slot]>`               | `%cobblemon:party_ivs_total [slot]%`               | int               |
+| `<cobblemon_party_ivs_percent:[slot]>`             | `%cobblemon:party_ivs_percent [slot]%`             | int               |
+| `<cobblemon_party_evs_hp:[slot]>`                  | `%cobblemon:party_evs_hp [slot]%`                  | int               |
+| `<cobblemon_party_evs_atk:[slot]>`                 | `%cobblemon:party_evs_atk [slot]%`                 | int               |
+| `<cobblemon_party_evs_def:[slot]>`                 | `%cobblemon:party_evs_def [slot]%`                 | int               |
+| `<cobblemon_party_evs_spa:[slot]>`                 | `%cobblemon:party_evs_spa [slot]%`                 | int               |
+| `<cobblemon_party_evs_spd:[slot]>`                 | `%cobblemon:party_evs_spd [slot]%`                 | int               |
+| `<cobblemon_party_evs_spe:[slot]>`                 | `%cobblemon:party_evs_spe [slot]%`                 | int               |
+| `<cobblemon_party_evs_total:[slot]>`               | `%cobblemon:party_evs_total [slot]%`               | int               |
+| `<cobblemon_party_evs_percent:[slot]>`             | `%cobblemon:party_evs_percent [slot]%`             | int               |
+| `<cobblemon_party_aspects:[slot]>`                 | `%cobblemon:party_aspects [slot]%`                 | list of strings   |
+| `<cobblemon_party_aspects:[slot]:[slot]>`          | `%cobblemon:party_aspects [slot]:[slot]%`          | string            |
+| `<cobblemon_party_aspects_has:[slot]:[aspect]>`    | `%cobblemon:party_aspects_has [slot]:[aspect]%`    | boolean           |
+| `<cobblemon_party_aspects:[slot]:[slot]>`          | `%cobblemon:party_aspects [slot]:[slot]%`          | string            |
+| `<cobblemon_party_ot_uuid:[slot]>`                 | `%cobblemon:party_ot_uuid [slot]%`                 | string            |
+| `<cobblemon_party_ot_name:[slot]>`                 | `%cobblemon:party_ot_name [slot]%`                 | string            |
+| `<cobblemon_party_property_has:[slot]:[property]>` | `%cobblemon:party_property_has [slot]:[property]%` | boolean           |
+| `<cobblemon_party_property_get:[slot]:[property]>` | `%cobblemon:party_property_get [slot]:[property]%` | string            |
+| `<cobblemon_party_scale_modifier:[slot]>`          | `%cobblemon:party_scale_modifier [slot]%`          | float             |
+
+### Dex
+`(dex id)` is an optional dex ID that can be provided (ex: `cobblemon:national`)
+
+| MiniPlaceholders                                 | PlaceholderAPI                                | Return Type |
+|--------------------------------------------------|-----------------------------------------------|-------------|
+| `<cobblemon_pokedex_amount_seen:(dex id)>`       | `%cobblemon:pokedex_amount_seen (dex id)%`    | int         |
+| `<cobblemon_pokedex_amount_caught:(dex id)>`     | `%cobblemon:pokedex_amount_caught (dex id)%`  | int         |
+| `<cobblemon_pokedex_percent_seen:(dex id)>`      | `%cobblemon:pokedex_percent_seen (dex id)%`   | int         |
+| `<cobblemon_pokedex_percent_caught:(dex id)>`    | `%cobblemon:pokedex_percent_caught (dex id)%` | int         |
+| `<cobblemon_pokedex_species_seen:(dex id)>`      | `%cobblemon:pokedex_species_seen (dex id)%`   | boolean     |
+| `<cobblemon_pokedex_species_caught:(dex id)>`    | `%cobblemon:pokedex_species_caught (dex id)%` | boolean     |
+| 🚫 `<cobblemon_pokedex_shinies_seen:(dex id)>`   | `%cobblemon:pokedex_shinies_seen (dex id)%`   | int         |
+| 🚫 `<cobblemon_pokedex_shinies_caught:(dex id)>` | `%cobblemon:pokedex_shinies_caught (dex id)%` | int         |
+
+_*🚫 - These placeholders have been removed and are no longer available. They were either working incorrectly or have been replaced.*_
+
+### Misc
+- `[expression]` is a molang expression string that will be parsed.
+
+| MiniPlaceholders                            | PlaceholderAPI                           | Return Type |
+|---------------------------------------------|------------------------------------------|-------------|
+| ⚠️ `<cobblemon_molang_player:[expression]>` | `%cobblemon:molang_player [expression]%` | string      |
+| `<cobblemon_pc_box_count>`                  | `%cobblemon:pc_box_count%`               | int         |
+
+_*⚠️ - These placeholders are unsafe and can cause potential security issues. Please see [Unsafe Placeholders](/cobblemonplaceholders/getting_started/unsafe_placeholders/) for more information.*_
+
+
+## Server Placeholders
+These placeholders can be used without any context!
+### Species Info
+`[species]` is the string name of the species (ex: `pikachu`)
+
+| MiniPlaceholders                                  | PlaceholderAPI                                    | Return Type     |
+|---------------------------------------------------|---------------------------------------------------|-----------------|
+| `<cobblemon_species_name:[species]>`              | `%cobblemon:species_name [species]%`              | string          |
+| `<cobblemon_species_id_national:[species]>`       | `%cobblemon:species_id_national [species]%`       | int             |
+| `<cobblemon_species_types:[species]>`             | `%cobblemon:species_types [species]%`             | list of strings |
+| `<cobblemon_species_types:[species]:[1-2]>`       | `%cobblemon:species_types [species]:[1-2]%`       | list of strings |
+| `<cobblemon_species_catchrate:[species]>`         | `%cobblemon:species_catchrate [species]%`         | int             |
+| `<cobblemon_species_abilities:[species]>`         | `%cobblemon:species_abilities [species]%`         | list of strings |
+| `<cobblemon_species_abilities:[species]:[1-2,H]>` | `%cobblemon:species_abilities [species]:[1-2,H]%` | list of strings |
+| `<cobblemon_species_egggroups:[species]>`         | `%cobblemon:species_egggroups [species]%`         | string          |
+| `<cobblemon_species_maleratio:[species]>`         | `%cobblemon:species_maleratio [species]%`         | float           |
+| `<cobblemon_species_basestats_hp:[species]>`      | `%cobblemon:species_basestats_hp [species]%`      | string          |
+| `<cobblemon_species_basestats_atk:[species]>`     | `%cobblemon:species_basestats_atk [species]%`     | string          |
+| `<cobblemon_species_basestats_def:[species]>`     | `%cobblemon:species_basestats_def [species]%`     | string          |
+| `<cobblemon_species_basestats_spa:[species]>`     | `%cobblemon:species_basestats_spa [species]%`     | string          |
+| `<cobblemon_species_basestats_spd:[species]>`     | `%cobblemon:species_basestats_spd [species]%`     | string          |
+| `<cobblemon_species_basestats_spe:[species]>`     | `%cobblemon:species_basestats_spe [species]%`     | string          |
+
+### Dex
+`(dex id)` is an optional dex ID that can be provided (ex: `cobblemon:national`)
+
+| MiniPlaceholders                     | PlaceholderAPI                       | Return Type |
+|--------------------------------------|--------------------------------------|-------------|
+| `<cobblemon_pokedex_total:(dex id)>` | `%cobblemon:pokedex_total (dex id)%` | int         |
+
+### Misc
+- `[expression]` is a molang expression string that will be parsed.
+
+| MiniPlaceholders                            | PlaceholderAPI                           | Return Type |
+|---------------------------------------------|------------------------------------------|-------------|
+| ⚠️ `<cobblemon_molang_server:[expression]>` | `%cobblemon:molang_server [expression]%` | string      |
+
+_*⚠️ - These placeholders are unsafe and can cause potential security issues. Please see [Unsafe Placeholders](/cobblemonplaceholders/getting_started/unsafe_placeholders/) for more information.*_

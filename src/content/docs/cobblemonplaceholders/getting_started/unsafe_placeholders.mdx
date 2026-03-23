@@ -1,0 +1,31 @@
+---
+title: Unsafe Placeholders
+description: Information on unsafe placeholders in Cobblemon Placeholders
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Code } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import defaultConfig from '../config/default_config.json?raw';
+
+Unsafe Placeholders are placeholders that have performance or potential security issues when used in certain contexts. These placeholders are marked as unsafe because they can potentially be exploited by malicious users! See the list below of unsafe placeholders and their mitigations.
+<br/><hr/>
+### Molang
+The Molang placeholders (see below) have been marked unsafe as they can potentially be used to execute arbitrary code on the server if used in certain contexts. Molang provides very powerful capabilities and functions, which can result in data exfiltration. The main concern is when these placeholders can be used in chat and a chat management mod will arbitrarily parse and execute these placeholders. More information about the initial finding of this issue can be found [here](https://discord.com/channels/1158447623989116980/1159150656431599617/1460740129692844169)
+
+#### Affected Placeholders
+| MiniPlaceholders                         | TextPlaceholderAPI                       |
+|------------------------------------------|------------------------------------------|
+| `<cobblemon_molang_player:[expression]>` | `%cobblemon:molang_player [expression]%` |
+| `<cobblemon_molang_server:[expression]>` | `%cobblemon:molang_server [expression]%` |
+
+#### Mitigations
+Mitigating the effects of this placeholder must be done on the mods that are parsing and executing these placeholders. If you are using a Chat Management mod that supports placeholder parsing, considering disabling that feature or using regex filters to block messages containing these placeholders. Below is a list of tested chat mods and their vulnerability to this issue:
+
+| Mod Name   | Affected?         | Fixes                                                                                                          |
+|------------|-------------------|----------------------------------------------------------------------------------------------------------------|
+| StyledChat | Appears to not be |                                                                                                                |
+| CarbonChat | Yes               | Configure a regex filter to block these placeholders <br/> ```chat-filter { "<cobblemon_molang_.*?>" = "" }``` |
+| ShadowChat | Yes               | Unknown                                                                                                        |
+
+<br/><hr/>

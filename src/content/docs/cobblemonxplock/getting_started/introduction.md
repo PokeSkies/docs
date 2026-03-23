@@ -7,7 +7,7 @@ Welcome to the documentation for the Cobblemon XP Lock mod! This guide will help
 ***
 
 ## Quick Start
-1. Install the CobbleDollars Bridge mod jar onto your server. Download the mod <a href="https://modrinth.com/mod/cobblemon-xp-lock" target="_blank" rel="noopener noreferrer">here</a>!
+1. Install the Cobblemon XP Lock mod jar onto your server. Download the mod <a href="https://modrinth.com/mod/cobblemon-xp-lock" target="_blank" rel="noopener noreferrer">here</a>!
 2. Use the command `/xplock <1-6>` to lock/unlock XP gain for the given slot!
 
 ## What is Cobblemon XP Lock?
