@@ -15,3 +15,7 @@ The following are the different types of Placeholders Services are supported.
 By default, the mod comes with a few built-in placeholders that can be used without any additional Placeholder API mods installed. These include:
 - `%player%` - The name of the player viewing the GUI.
 - `%player_uuid%` - The UUID of the player viewing the GUI.
+- `%player_dimension%` - Get the players current dimension id (ex: minecraft:overworld).
+- `%player_pos_x%` - Get the players current X position.
+- `%player_pos_y%` - Get the players current Y position.
+- `%player_pos_z%` - Get the players current Z position.

@@ -256,6 +256,7 @@ export default defineConfig({
                                         'actionitems/items/items',
                                         'actionitems/items/display_options',
                                         'actionitems/items/actions',
+                                        'actionitems/items/random_actions',
                                         'actionitems/items/requirements',
                                         'actionitems/items/components'
                                     ]

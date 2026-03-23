@@ -1,0 +1,133 @@
+---
+title: Random Actions
+description: Guide to using random actions in the ActionItems mod
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+Random Actions are a special type of [action](/actionitems/items/actions/) that allows you to specify a list of actions to choose from when an Action Item is used. There are many options for configuring the behavior of the actions that get executed.
+```json
+"random_actions": {
+  "min": 1,
+  "max": 1,
+  "allow_duplicates": false,
+  "actions": [
+    {
+      "type": "COMMAND_CONSOLE",
+      "weight": 5,
+      "command": [
+        "give %player% dirt 1"
+      ]
+    },
+    {
+      "weight": 1,
+      "actions": [
+        {
+          "type": "COMMAND_CONSOLE",
+          "command": [
+            "give %player% emerald 1"
+          ]
+        },
+        {
+          "type": "MESSAGE",
+          "message": [
+            "<gold>Woah, you dug up an emerald!"
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Random Action Options
+### Min
+The minimum number of actions to execute when the item is used. The amount of actions executed will be a random number between the minimum and maximum values (inclusive).
+```json
+"min": 1
+```
+### Max
+The maximum number of actions to execute when the item is used. The amount of actions executed will be a random number between the minimum and maximum values (inclusive).
+```json
+"max": 1
+```
+### Allow Duplicates
+Whether the same action can be executed multiple times when the item is used. If set to `false`, each action can only be executed once per item use.
+```json
+"allow_duplicates": false
+```
+### Actions
+A list of actions or group of actions with weights that can be randomly executed when the item is used. You can either specify a single action with a weight or you can specify a group of actions with a weight.
+```json
+"actions": [
+  {
+    "type": "COMMAND_CONSOLE",
+    "weight": 5,
+    "command": [
+      "give %player% dirt 1"
+    ]
+  },
+  {
+    "weight": 1,
+    "actions": [
+      {
+        "type": "COMMAND_CONSOLE",
+        "command": [
+          "give %player% emerald 1"
+        ]
+      },
+      {
+        "type": "MESSAGE",
+        "message": [
+          "<gold>Woah, you dug up an emerald!"
+        ]
+      }
+    ]
+  }
+]
+```
+#### Weight
+When specifying a weight in the list of actions, it is the likelihood of that action or group of actions being chosen to be executed. Weights are relative to the other weights in the list. The higher the weight compared to the others in the list, the more likely it is to be chosen. For example, if you have two actions with weights `1` and `3`, the action with weight `1` has a 25% chance to be chosen, while the action with weight `3` has a 75% chance to be chosen.
+#### Single Action
+When specifying a single action, you need to provide the `type`, `weight`, and the options for that specific action type. See [Actions](/actionitems/items/actions/) for more information on the available action types and their options.
+```json
+{
+  "type": "COMMAND_CONSOLE",
+  "weight": 5,
+  "command": [
+    "give %player% dirt 1"
+  ]
+}
+```
+<LinkCard
+    title="Actions"
+    href="/actionitems/items/actions/"
+    description="List of available actions for Action Items"
+/>
+
+#### Grouped Actions
+When specifying a group of actions, you need to provide the `weight` for the group and a list of `actions` within that group. Each action within the group follows the same formatting as a normal [action](/actionitems/items/actions/). If this group is chosen to be executed, all actions within the group will be executed in order.
+```json
+{
+  "weight": 1,
+  "actions": [
+    {
+      "type": "COMMAND_CONSOLE",
+      "command": [
+        "give %player% emerald 1"
+      ]
+    },
+    {
+      "type": "MESSAGE",
+      "message": [
+        "<gold>Woah, you dug up an emerald!"
+      ]
+    }
+  ]
+}
+```
+<LinkCard
+    title="Actions"
+    href="/actionitems/items/actions/"
+    description="List of available actions for Action Items"
+/>

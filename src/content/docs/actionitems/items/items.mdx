@@ -27,6 +27,7 @@ There are a base set of configuration options for every Action Item. The only re
     ]
   },
   "actions": [],
+  "random_actions": {},
   "requirements": {
     "requirements": [],
     "success_actions": [],
@@ -36,27 +37,8 @@ There are a base set of configuration options for every Action Item. The only re
   "limit": 0,
   "consume": true
 }
-```json
-{
-  "display": {
-    "item": "minecraft:diamond",
-    "name": "<red><b>Example Item",
-    "lore": [
-      "<gray>Click to use this item!"
-    ]
-  },
-  "actions": [],
-  "requirements": {
-    "requirements": [],
-    "success_actions": [],
-    "deny_actions": []
-  },
-  "cooldown": 5,
-  "limit": 0,
-  "consume": true
-}
-
 ```
+
 ## Display (required)
 The item used to represent the Action Item. This is the item that players will see in their inventory.
 ```json
@@ -83,6 +65,30 @@ The list of actions to perform when the item is used.
     title="Actions"
     href="/actionitems/items/actions/"
     description="List of available actions for Action Items"
+/>
+
+## Random Actions
+A set of actions with weights that can be randomly executed when the item is used.
+```json
+"random_actions": {
+  "min": 1,
+  "max": 1,
+  "allow_duplicates": false,
+  "actions": [
+    {
+      "type": "COMMAND_CONSOLE",
+      "weight": 5,
+      "command": [
+        "give %player% dirt 1"
+      ]
+    }
+  ]
+}
+```
+<LinkCard
+    title="Random Actions"
+    href="/actionitems/items/random_actions/"
+    description="Guide to using random actions for Action Items"
 />
 
 ## Requirements
