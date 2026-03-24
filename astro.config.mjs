@@ -310,6 +310,21 @@ export default defineConfig({
                             ]),
                         },
                         {
+                            label: 'Impactor Placeholders',
+                            link: '/impactorplaceholders/getting_started/introduction',
+                            icon: 'i-mdi:puzzle-outline',
+                            items: defineSidebar([
+                                {
+                                    label: "Getting Started",
+                                    items: [
+                                        'impactorplaceholders/getting_started/introduction',
+                                        'impactorplaceholders/getting_started/installation',
+                                        'impactorplaceholders/getting_started/placeholders',
+                                    ]
+                                }
+                            ]),
+                        },
+                        {
                             label: 'CobbleDollars Bridge',
                             link: '/cobbledollarsbridge/getting_started/introduction',
                             icon: 'i-mdi:bridge',

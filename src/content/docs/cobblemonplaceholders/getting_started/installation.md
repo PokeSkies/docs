@@ -11,7 +11,7 @@ Cobblemon Placeholders can be installed in either a server or client environment
 
 ***
 ## Requirements
-Cobblemon XP Lock requires the following to run (as of March 2026):
+Cobblemon Placeholders requires the following to run (as of March 2026):
 - **Minecraft** - 1.21.1
 - **Fabric Loader** - 0.17.2+
 - **Fabric API** - 0.116.6-1.21.1 (or greater)
